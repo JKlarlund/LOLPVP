@@ -1,0 +1,101 @@
+name: Testplugin
+version: '${project.version}'
+main: klarlund.jonathan.testplugin.Testplugin
+api-version: 1.19
+commands:
+  pluskvamperfektum:
+    description: Toggles fly for the command sender
+    usage: /pluskvamperfektum
+    aliases: imabird
+    permission: testplugin.fly
+    permission-message: You are a loser!
+  give:
+    description: Gives item
+    usage: /Give
+    aliases: /g
+    permission: testplugin.give
+    permission-message: You are not allowed to use this command!
+  wifebeater:
+    description: Gives wifebeater
+    usage: /wifebeater
+    permission: testplugin.wifebeater
+  ejacul8:
+    description: Gives ejacul8
+    usage: /ejacul8
+    permission: testplugin.ejacul8
+  mjolnir:
+    usage: /mjolnir
+    permission: testplugin.mjolnir
+  prot6boots:
+    usage: /prot6boots
+    permission: testplugin.prot6boots
+  prot6legs:
+    usage: /plot6legs
+    permission: testplugin.prot6legs
+  prot6chest:
+    usage: /prot6chest
+    permission: testplugin.prot6chest
+  prot6helm:
+    usage: /prot6helm
+    permission: testplugin.prot6helm
+  enderbow:
+    usage: /enderbow
+    permission: testplugin.enderbow
+  ironman:
+    usage: /ironman
+    permission: testplugin.ironman
+    aliases: [im, i]
+  regen:
+    usage: /regen
+    permission: testplugin.regen
+    aliases: [re]
+  fireresistance:
+    usage: /fireresistance
+    permission: testplugin.fireresistance
+    aliases: [fr, fireres, fire, res]
+  nightvision:
+    usage: /nightvision
+    permission: testplugin.nightvision
+    aliases: [nv, night, vision, nightv]
+  ironman2:
+    usage: /ironman2
+    permission: testplugin.ironman2
+    aliases: [im2]
+  invisibility:
+    usage: /invisibility
+    permission: testplugin.invisibility
+    aliases: [inv, invis, invi]
+  babymaker:
+    usage: /babymaker
+    permission: testplugin.babymaker
+  bunnybeater:
+    usage: /bunnybeater
+    permission: testplugin.bunnybeater
+  battleaxe:
+    usage: /battleaxe
+    permission: testplugin.battleaxe
+  daterapist:
+    usage: /daterapist
+    permission: testplugin.daterapist
+  invisring:
+    usage: /invisring
+    permission: testplugin.invisring
+  iceblade:
+    usage: /iceblade
+    permission: testplugin.iceblade
+  rocketboots:
+    usage: /rocketboots
+    permission: testplugin.rocketboots
+  angelwings:
+    usage: /angelwings
+    permission: testplugin.angelwings
+  payday:
+    usage: /payday
+    permission: testplugin.payday
+  emp:
+    usage: /emp
+    permission: testplugin.emp
+
+
+
+

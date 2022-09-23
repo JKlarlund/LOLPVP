@@ -1,6 +1,6 @@
 package klarlund.jonathan.testplugin.weaponevents;
 
-import klarlund.jonathan.testplugin.Testplugin;
+import klarlund.jonathan.testplugin.Main;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import org.bukkit.*;
 import org.bukkit.entity.EntityType;
@@ -22,10 +22,10 @@ import java.util.*;
 
 public class Payday implements Listener {
 
-    Testplugin plugin;
-    Testplugin econ;
+    Main plugin;
+    Main econ;
 
-    public Payday(Testplugin plugin){
+    public Payday(Main plugin){
         this.plugin = plugin;
     }
     ArrayList<Item> money = new ArrayList<Item>();
@@ -107,13 +107,13 @@ public class Payday implements Listener {
             trophy.setItemMeta(meta);
             killer.getInventory().addItem(trophy);
             killer.updateInventory();
-            if ((Testplugin.getEconomy().getBalance(p) * 0.1) > 5000000)
+            if ((Main.getEconomy().getBalance(p) * 0.1) > 5000000)
             {
-                Testplugin.getEconomy().depositPlayer(killer, 5000000);
-                Testplugin.getEconomy().withdrawPlayer(p, 5000000);
+                Main.getEconomy().depositPlayer(killer, 5000000);
+                Main.getEconomy().withdrawPlayer(p, 5000000);
             } else {
-                Testplugin.getEconomy().depositPlayer(killer, Testplugin.getEconomy().getBalance(p) * 0.1);
-                Testplugin.getEconomy().withdrawPlayer(p, Testplugin.getEconomy().getBalance(p) * 0.1);
+                Main.getEconomy().depositPlayer(killer, Main.getEconomy().getBalance(p) * 0.1);
+                Main.getEconomy().withdrawPlayer(p, Main.getEconomy().getBalance(p) * 0.1);
             }
         }
     }

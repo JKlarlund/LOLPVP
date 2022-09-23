@@ -1,6 +1,6 @@
 package klarlund.jonathan.testplugin.weaponevents;
 
-import klarlund.jonathan.testplugin.Testplugin;
+import klarlund.jonathan.testplugin.Main;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import org.bukkit.*;
 import org.bukkit.entity.Arrow;
@@ -18,13 +18,13 @@ import java.util.HashMap;
 
 public class Angelwings implements Listener {
 
-    Testplugin plugin;
+    Main plugin;
 
     HashMap<String, Location> locs = new HashMap<String, Location>();
     ArrayList<String> hitPlayers = new ArrayList<String>();
     ArrayList<String> FlyingPlayers = new ArrayList<String>();
 
-    public Angelwings(Testplugin plugin){
+    public Angelwings(Main plugin){
         plugin = this.plugin;
     }
 

@@ -1,6 +1,6 @@
 package klarlund.jonathan.testplugin.weaponevents;
 
-import klarlund.jonathan.testplugin.Testplugin;
+import klarlund.jonathan.testplugin.Main;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import me.confuser.barapi.BarAPI;
 import org.bukkit.Bukkit;
@@ -19,11 +19,11 @@ import java.util.UUID;
 
 public class InvisRing implements Listener {
 
-    Testplugin plugin;
+    Main plugin;
     public final HashMap<UUID, Long> invislist;
     public final HashMap<UUID, Integer> warm;
 
-    public InvisRing(Testplugin plugin){
+    public InvisRing(Main plugin){
         this.plugin = plugin;
         this.invislist = new HashMap<>();
         this.warm = new HashMap<>();

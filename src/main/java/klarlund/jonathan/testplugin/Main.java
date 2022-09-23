@@ -11,7 +11,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Testplugin extends JavaPlugin {
+public final class Main extends JavaPlugin {
 
     private static Economy econ = null;
 

@@ -1,6 +1,6 @@
 package klarlund.jonathan.testplugin.weaponevents;
 
-import klarlund.jonathan.testplugin.Testplugin;
+import klarlund.jonathan.testplugin.Main;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import klarlund.jonathan.testplugin.utilstest.Cooldowns;
 import me.confuser.barapi.BarAPI;
@@ -24,9 +24,9 @@ public class Iceblade implements Listener {
 
     public static HashSet<String> froze;
 
-    Testplugin plugin;
+    Main plugin;
 
-    public Iceblade(Testplugin plugin){
+    public Iceblade(Main plugin){
         this.plugin = plugin;
         this.r = new HashSet<String>();
         this.froze = new HashSet<String>();

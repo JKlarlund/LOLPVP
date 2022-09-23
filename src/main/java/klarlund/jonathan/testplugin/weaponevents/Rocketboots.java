@@ -1,6 +1,6 @@
 package klarlund.jonathan.testplugin.weaponevents;
 
-import klarlund.jonathan.testplugin.Testplugin;
+import klarlund.jonathan.testplugin.Main;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
@@ -18,12 +18,12 @@ import java.util.HashSet;
 
 public class Rocketboots implements Listener {
 
-    Testplugin plugin;
+    Main plugin;
 
     public final HashSet<String> inrocket = new HashSet<String>();
     public final HashMap<String, Integer> rr = new HashMap<String, Integer>();
 
-    public Rocketboots(Testplugin plugin){
+    public Rocketboots(Main plugin){
         this.plugin = plugin;
     }
 

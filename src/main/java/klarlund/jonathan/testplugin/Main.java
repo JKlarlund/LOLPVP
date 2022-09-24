@@ -24,7 +24,7 @@ public final class Main extends JavaPlugin {
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-        Bukkit.getLogger().info("Hello World");
+        Bukkit.getLogger().info("Working.");
         ItemManager.init();
 
         getServer().getPluginManager().registerEvents(new InvisRing(this), this);

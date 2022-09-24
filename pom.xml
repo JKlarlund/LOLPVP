@@ -97,12 +97,14 @@
     </repositories>
 
     <dependencies>
+
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
 
         <dependency>
             <groupId>org.spigotmc</groupId>
@@ -125,8 +127,6 @@
             <scope>provided</scope>
         </dependency>
 
-
-
         <dependency>
             <groupId>me.confuser</groupId>
             <artifactId>BarAPI</artifactId>
@@ -145,15 +145,6 @@
             <version>2.19.7</version>
             <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>com.stirante</groupId>
-            <artifactId>MoreProjectiles</artifactId>
-            <version>1.2-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-
-
 
     </dependencies>
 </project>

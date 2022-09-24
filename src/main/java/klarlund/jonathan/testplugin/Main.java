@@ -1,9 +1,8 @@
 package klarlund.jonathan.testplugin;
 
-
 import klarlund.jonathan.testplugin.commands.Kits;
 import klarlund.jonathan.testplugin.commands.WeaponCommands;
-//import klarlund.jonathan.testplugin.events.Unused_DeathChest;
+import klarlund.jonathan.testplugin.events.unusedDeathChest;
 import klarlund.jonathan.testplugin.weaponevents.*;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import net.milkbowl.vault.economy.Economy;
@@ -14,8 +13,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class Main extends JavaPlugin {
 
     private static Economy econ = null;
-
-
 
 
     @Override
@@ -42,7 +39,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Rocketboots(this), this);
         getServer().getPluginManager().registerEvents(new Angelwings(this), this);
         getServer().getPluginManager().registerEvents(new Payday(this), this);
-        //getServer().getPluginManager().registerEvents(new Unused_DeathChest(),this);
+        getServer().getPluginManager().registerEvents(new unusedDeathChest(this),this);
         getCommand("wifebeater").setExecutor(new WeaponCommands());
         getCommand("ejacul8").setExecutor(new WeaponCommands());
         getCommand("prot6boots").setExecutor(new WeaponCommands());

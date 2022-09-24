@@ -1,10 +1,7 @@
-/*
+
 package MoreProjectiles;
 
-import com.stirante.MoreProjectiles.TypedRunnable;
-import com.stirante.MoreProjectiles.event.CustomProjectileHitEvent;
-import com.stirante.MoreProjectiles.event.CustomProjectileHitEvent.HitType;
-import com.stirante.MoreProjectiles.projectile.*;
+
 import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
@@ -14,10 +11,10 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
-*/
+
 /**
  * Simple test class.
- *//*
+ */
 
 public class MainTest extends JavaPlugin implements Listener {
 
@@ -25,6 +22,8 @@ public class MainTest extends JavaPlugin implements Listener {
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
     }
+}
+/*
 
     @EventHandler
     public void onInteract(PlayerInteractEvent e) {
@@ -68,4 +67,5 @@ public class MainTest extends JavaPlugin implements Listener {
     }
 
 }
+
 */

@@ -2,6 +2,7 @@ package klarlund.jonathan.testplugin.weaponevents;
 
 import klarlund.jonathan.testplugin.Main;
 import klarlund.jonathan.testplugin.items.ItemManager;
+import klarlund.jonathan.testplugin.utilstest.ParticleEffect;
 import org.bukkit.*;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
@@ -15,6 +16,7 @@ import org.bukkit.util.Vector;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 public class Angelwings implements Listener {
 
@@ -59,10 +61,9 @@ public class Angelwings implements Listener {
             {
                 p.setVelocity(p.getEyeLocation().getDirection().multiply(0.5).add(new Vector(0,0.5,0)));
                 p.getWorld().playSound(p.getLocation(), Sound.ENDERDRAGON_WINGS, 1f, 1f);
-                p.getWorld().playEffect(p.getLocation(), Effect.MOBSPAWNER_FLAMES, 4);
-                p.getWorld().playEffect(p.getLocation(), Effect.MOBSPAWNER_FLAMES, 4);
-                //ParticleEffect.FIREWORKS_SPARK.display(p.getLocation(), new Random().nextFloat(), new Random().nextFloat(), new Random().nextFloat(), 0.25f, 30);
-                //Particle.FIREWORKS_SPARK(p.getLocation(), new Random().nextFloat(), new Random().nextFloat(), new Random().nextFloat(), 0.25f, 30);
+                //p.getWorld().playEffect(p.getLocation(), Effect.MOBSPAWNER_FLAMES, 4);
+                //p.getWorld().playEffect(p.getLocation(), Effect.MOBSPAWNER_FLAMES, 4);
+                ParticleEffect.FIREWORKS_SPARK.display(p.getLocation(), new Random().nextFloat(), new Random().nextFloat(), new Random().nextFloat(), 0.25f, 30);
                 if (p.getAllowFlight() != true)
                 {
                     p.setAllowFlight(true);

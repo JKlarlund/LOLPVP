@@ -1,6 +1,8 @@
-/*
+
 package klarlund.jonathan.testplugin.events;
 
+import klarlund.jonathan.testplugin.Main;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Chest;
@@ -12,17 +14,24 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+
 import java.util.UUID;
 
-public class Unused_DeathChest implements Listener {
+public class unusedDeathChest implements Listener {
+
+    Main plugin;
+
+    public unusedDeathChest(Main plugin){
+        this.plugin = plugin;
+    }
 
     @EventHandler
     public void onPlayerDeath(EntityDamageEvent event){
 
-        */
+        /*
 /*
         If this is done right, we are now looking at the dead player.
-        *//*
+        */
 
 
         if (event.getEntityType().equals(EntityType.PLAYER)){
@@ -30,12 +39,15 @@ public class Unused_DeathChest implements Listener {
             Player player = event.getEntity().getServer().getPlayer(id);
             if (player.getHealth() <= event.getDamage()){
 
-                */
+
 /*
                 Creating DeathChest
-                 *//*
+                 */
 
                 Location DeathLocation = player.getLocation();
+                while (DeathLocation.getBlock().getType() != Material.AIR){
+                    DeathLocation.setY(DeathLocation.getY() + 1);
+                }
                 DeathLocation.getBlock().setType(Material.CHEST);
                 Chest DeathChest = (Chest) DeathLocation.getBlock().getState();
                 Inventory DeathChestInventory = DeathChest.getInventory();
@@ -50,7 +62,19 @@ public class Unused_DeathChest implements Listener {
 
                 DeathChest.update();
 
-                //player.getInventory().clear();
+                Long delay = 20L * 20;
+
+
+                Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+                    @Override
+                    public void run() {
+                        for (ItemStack i : DeathChestInventory)
+                            DeathChestInventory.remove(i);
+
+                        DeathLocation.getBlock().setType(Material.AIR);
+
+                    }
+                }, delay);
 
             }
         }
@@ -62,4 +86,4 @@ public class Unused_DeathChest implements Listener {
 
 }
 }
-*/
+

@@ -4,13 +4,11 @@ import net.minecraft.server.v1_8_R3.EnumParticle;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
-import org.bukkit.plugin.java.JavaPlugin;
 import net.minecraft.server.v1_8_R3.PacketPlayOutWorldParticles;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-public class OwnParticles extends JavaPlugin {
+public class OwnParticles_Unused {
 
     //Particles which are spawned in a RANGE (And not @ Player):
 
@@ -35,7 +33,7 @@ public class OwnParticles extends JavaPlugin {
 
         //Creating Particle
         PacketPlayOutWorldParticles packetparticle = new PacketPlayOutWorldParticles(EnumParticle.FIREWORKS_SPARK, true,
-                (float) loc.getX(), (float) loc.getY(), (float) loc.getZ(), 0, 0, 0, 1, 0);
+                (float) loc.getX(), (float) loc.getY(), (float) loc.getZ(), 0, 0, 0, 0.25F, 30);
 
         //Sending to player.
         for (Player p: players){

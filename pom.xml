@@ -93,6 +93,11 @@
             <url>https://jitpack.io</url>
         </repository>
 
+        <repository>
+            <id>sinndev-repo</id>
+            <url>http://repo.sinndev.com/content/groups/public/</url>
+        </repository>
+
 
     </repositories>
 
@@ -145,6 +150,12 @@
             <version>2.19.7</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-->><dependency>
+            <groupId>com.darkblade12</groupId>
+            <artifactId>particleeffect</artifactId>
+            <version>1.7</version>
+        </dependency><-->
 
     </dependencies>
 </project>

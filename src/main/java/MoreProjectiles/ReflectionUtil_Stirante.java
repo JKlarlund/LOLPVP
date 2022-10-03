@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.bukkit.Bukkit;
 
-public abstract class ReflectionUtil {
+public abstract class ReflectionUtil_Stirante {
     private static final Map<Class<?>, Class<?>> CORRESPONDING_TYPES = new HashMap<>();
 
     static {

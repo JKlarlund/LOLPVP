@@ -13,8 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class Main extends JavaPlugin {
 
     private static Economy econ = null;
-
-
+    
     @Override
     public void onEnable() {
         // Plugin startup logic

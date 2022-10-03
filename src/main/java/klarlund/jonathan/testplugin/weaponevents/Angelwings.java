@@ -2,6 +2,7 @@ package klarlund.jonathan.testplugin.weaponevents;
 
 import klarlund.jonathan.testplugin.Main;
 import klarlund.jonathan.testplugin.items.ItemManager;
+import klarlund.jonathan.testplugin.utilstest.OwnParticles_Unused;
 import klarlund.jonathan.testplugin.utilstest.ParticleEffect;
 import org.bukkit.*;
 import org.bukkit.entity.Arrow;
@@ -61,9 +62,13 @@ public class Angelwings implements Listener {
             {
                 p.setVelocity(p.getEyeLocation().getDirection().multiply(0.5).add(new Vector(0,0.5,0)));
                 p.getWorld().playSound(p.getLocation(), Sound.ENDERDRAGON_WINGS, 1f, 1f);
-                //p.getWorld().playEffect(p.getLocation(), Effect.MOBSPAWNER_FLAMES, 4);
-                //p.getWorld().playEffect(p.getLocation(), Effect.MOBSPAWNER_FLAMES, 4);
-                ParticleEffect.FIREWORKS_SPARK.display(p.getLocation(), new Random().nextFloat(), new Random().nextFloat(), new Random().nextFloat(), 0.25f, 30);
+
+                /*
+                Displays firework particle using https://bukkit.org/threads/1-8-particleeffect-v1-7.154406/. Amount = 1 looks like Thads, but it might be wrong.
+                 */
+
+                ParticleEffect.FIREWORKS_SPARK.display(new Random().nextFloat(), new Random().nextFloat(), new Random().nextFloat(), 0.25f, 1, p.getLocation(), 20D);
+
                 if (p.getAllowFlight() != true)
                 {
                     p.setAllowFlight(true);
@@ -75,6 +80,7 @@ public class Angelwings implements Listener {
             }
         }
     }
+
     @EventHandler
     public void onPlayerToggleFlight(PlayerToggleFlightEvent e)
     {

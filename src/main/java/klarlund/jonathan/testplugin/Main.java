@@ -39,6 +39,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Angelwings(this), this);
         getServer().getPluginManager().registerEvents(new Payday(this), this);
         getServer().getPluginManager().registerEvents(new unusedDeathChest(this),this);
+        getServer().getPluginManager().registerEvents(new EMP(), this);
         getCommand("wifebeater").setExecutor(new WeaponCommands());
         getCommand("ejacul8").setExecutor(new WeaponCommands());
         getCommand("prot6boots").setExecutor(new WeaponCommands());

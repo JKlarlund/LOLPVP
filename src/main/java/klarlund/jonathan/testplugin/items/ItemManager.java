@@ -386,7 +386,7 @@ public class ItemManager {
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("EMP");
         meta.addEnchant(Enchantment.DAMAGE_UNDEAD, 1, true);
-        meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+        //meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         List<String> empmeta = new ArrayList<String>();
         empmeta.add(ChatColor.ITALIC + "" + ChatColor.DARK_PURPLE + "A throwable bomb that disables your enemies' potion effects!");
         empmeta.add(ChatColor.DARK_GRAY + "Right click to launch.");

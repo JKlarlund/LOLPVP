@@ -27,6 +27,7 @@ public class Angelwings implements Listener {
     ArrayList<String> hitPlayers = new ArrayList<String>();
     ArrayList<String> FlyingPlayers = new ArrayList<String>();
 
+
     public Angelwings(Main plugin){
         plugin = this.plugin;
     }

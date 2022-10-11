@@ -1,5 +1,7 @@
 package klarlund.jonathan.testplugin;
 
+import klarlund.jonathan.testplugin.MysteryChest.ChestManager;
+import klarlund.jonathan.testplugin.MysteryChest.PVPChest;
 import klarlund.jonathan.testplugin.commands.Kits;
 import klarlund.jonathan.testplugin.commands.WeaponCommands;
 import klarlund.jonathan.testplugin.events.unusedDeathChest;
@@ -7,6 +9,8 @@ import klarlund.jonathan.testplugin.weaponevents.*;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
+import org.bukkit.block.Chest;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -25,6 +29,7 @@ public final class Main extends JavaPlugin {
         }
         Bukkit.getLogger().info("Working.");
         ItemManager.init();
+        ChestManager.init();
 
         getServer().getPluginManager().registerEvents(new InvisRing(this), this);
         getServer().getPluginManager().registerEvents(new Wifebeater(), this);
@@ -40,6 +45,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Payday(this), this);
         getServer().getPluginManager().registerEvents(new unusedDeathChest(this),this);
         getServer().getPluginManager().registerEvents(new EMP(), this);
+        getServer().getPluginManager().registerEvents(new PVPChest(), this);
         getCommand("wifebeater").setExecutor(new WeaponCommands());
         getCommand("ejacul8").setExecutor(new WeaponCommands());
         getCommand("prot6boots").setExecutor(new WeaponCommands());
@@ -64,6 +70,18 @@ public final class Main extends JavaPlugin {
         getCommand("angelwings").setExecutor(new WeaponCommands());
         getCommand("payday").setExecutor(new WeaponCommands());
         getCommand("emp").setExecutor(new WeaponCommands());
+        getCommand("pvpchest").setExecutor(new WeaponCommands());
+        getCommand("morningwood").setExecutor(new WeaponCommands());
+        getCommand("morningbj").setExecutor(new WeaponCommands());
+        getCommand("excalibur").setExecutor(new WeaponCommands());
+        getCommand("sparringaxe").setExecutor(new WeaponCommands());
+        getCommand("prot5").setExecutor(new WeaponCommands());
+        getCommand("prot4").setExecutor(new WeaponCommands());
+        getCommand("prot4ae").setExecutor(new WeaponCommands());
+        getCommand("prot5ae").setExecutor(new WeaponCommands());
+        getCommand("prot6ae").setExecutor(new WeaponCommands());
+
+
 
     }
 

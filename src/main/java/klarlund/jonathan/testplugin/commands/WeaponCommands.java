@@ -1,5 +1,7 @@
 package klarlund.jonathan.testplugin.commands;
 
+import klarlund.jonathan.testplugin.MysteryChest.ChestManager;
+import klarlund.jonathan.testplugin.MysteryChest.PVPChest;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -68,6 +70,58 @@ public class WeaponCommands implements CommandExecutor {
         }
         if (command.getName().equalsIgnoreCase("emp")) {
             player.getInventory().addItem(ItemManager.emp);
+        }
+        if (command.getName().equalsIgnoreCase("pvpchest")) {
+            player.getInventory().addItem(ChestManager.PVPChest);
+        }
+        if (command.getName().equalsIgnoreCase("morningbj")) {
+            player.getInventory().addItem(ItemManager.morningbj);
+        }
+        if (command.getName().equalsIgnoreCase("morningwood")) {
+            player.getInventory().addItem(ItemManager.morningwood);
+        }
+        if (command.getName().equalsIgnoreCase("sparringaxe")) {
+            player.getInventory().addItem(ItemManager.sparringaxe);
+        }
+        if (command.getName().equalsIgnoreCase("excalibur")) {
+            player.getInventory().addItem(ItemManager.excalibur);
+        }
+
+        if (command.getName().equalsIgnoreCase("prot5")){
+            player.getInventory().addItem(ItemManager.prot5boots);
+            player.getInventory().addItem(ItemManager.prot5legs);
+            player.getInventory().addItem(ItemManager.prot5chest);
+            player.getInventory().addItem(ItemManager.prot5helm);
+
+
+        }
+        if (command.getName().equalsIgnoreCase("prot4")){
+            player.getInventory().addItem(ItemManager.prot4boots);
+            player.getInventory().addItem(ItemManager.prot4legs);
+            player.getInventory().addItem(ItemManager.prot4chest);
+            player.getInventory().addItem(ItemManager.prot4helm);
+
+        }
+        if (command.getName().equalsIgnoreCase("prot4ae")){
+            player.getInventory().addItem(ItemManager.prot4aeboots);
+            player.getInventory().addItem(ItemManager.prot4aelegs);
+            player.getInventory().addItem(ItemManager.prot4aechest);
+            player.getInventory().addItem(ItemManager.prot4aehelm);
+
+        }
+        if (command.getName().equalsIgnoreCase("prot5ae")){
+            player.getInventory().addItem(ItemManager.prot5aeboots);
+            player.getInventory().addItem(ItemManager.prot5aelegs);
+            player.getInventory().addItem(ItemManager.prot5aechest);
+            player.getInventory().addItem(ItemManager.prot5aehelm);
+
+        }
+        if (command.getName().equalsIgnoreCase("prot6ae")){
+            player.getInventory().addItem(ItemManager.prot6aeboots);
+            player.getInventory().addItem(ItemManager.prot6aelegs);
+            player.getInventory().addItem(ItemManager.prot6aechest);
+            player.getInventory().addItem(ItemManager.prot6aehelm);
+
         }
         return true;
 

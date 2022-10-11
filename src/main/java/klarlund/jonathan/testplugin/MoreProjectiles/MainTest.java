@@ -1,5 +1,5 @@
 
-package MoreProjectiles;
+package klarlund.jonathan.testplugin.MoreProjectiles;
 
 
 import org.bukkit.Effect;

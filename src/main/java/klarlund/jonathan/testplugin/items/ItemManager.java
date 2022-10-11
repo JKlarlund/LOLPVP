@@ -47,6 +47,56 @@ public class ItemManager {
 
     public static ItemStack emp;
 
+    public static ItemStack excalibur;
+
+    public static ItemStack sparringaxe;
+
+    public static ItemStack morningwood;
+
+    public static ItemStack morningbj;
+
+    public static ItemStack prot5legs;
+
+    public static ItemStack prot5chest;
+
+    public static ItemStack prot5helm;
+
+    public static ItemStack prot5boots;
+
+    public static ItemStack prot4legs;
+
+    public static ItemStack prot4chest;
+
+    public static ItemStack prot4helm;
+
+    public static ItemStack prot4boots;
+
+
+    public static ItemStack prot4aelegs;
+
+    public static ItemStack prot4aechest;
+
+    public static ItemStack prot4aehelm;
+
+    public static ItemStack prot4aeboots;
+
+    public static ItemStack prot5aelegs;
+
+    public static ItemStack prot5aechest;
+
+    public static ItemStack prot5aehelm;
+
+    public static ItemStack prot5aeboots;
+
+    public static ItemStack prot6aelegs;
+
+    public static ItemStack prot6aechest;
+
+    public static ItemStack prot6aehelm;
+
+    public static ItemStack prot6aeboots;
+
+
     public static void init() {
         CreateWifeBeater();
         CreateEjacul8();
@@ -66,6 +116,30 @@ public class ItemManager {
         ANGELWINGS();
         PAYDAY();
         EMP();
+        EXCALIBUR();
+        SPARRINGAXE();
+        MORNINGWOOD();
+        MORNINGBJ();
+        PROTVBOOTS();
+        PROTVLEGS();
+        PROTVCHEST();
+        PROTVHELM();
+        PROTIVBOOTS();
+        PROTIVLEGS();
+        PROTIVCHEST();
+        PROTIVHELM();
+        PROTIVAEBOOTS();
+        PROTIVAELEGS();
+        PROTIVAECHEST();
+        PROTIVAEHELM();
+        PROTVAEBOOTS();
+        PROTVAELEGS();
+        PROTVAECHEST();
+        PROTVAEHELM();
+        PROTVIAEBOOTS();
+        PROTVIAELEGS();
+        PROTVIAECHEST();
+        PROTVIAEHELM();
 
     }
 
@@ -263,7 +337,7 @@ public class ItemManager {
     private static void CreateBAXE(){
         ItemStack item = new ItemStack(Material.DIAMOND_AXE, 1);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("$bBattle Axe");
+        meta.setDisplayName(ChatColor.BLUE + "Battle Axe");
         meta.addEnchant(Enchantment.DAMAGE_ALL, 10, true);
         meta.addEnchant(Enchantment.DAMAGE_UNDEAD, 10, true);
         meta.addEnchant(Enchantment.DAMAGE_ARTHROPODS, 10, true);
@@ -395,4 +469,464 @@ public class ItemManager {
         item.setItemMeta(meta);
         emp = item;
     }
-}
+
+    private static void EXCALIBUR(){
+        ItemStack item = new ItemStack(Material.DIAMOND_SWORD, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bExcalibur");
+        meta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
+        meta.addEnchant(Enchantment.DAMAGE_UNDEAD, 5, true);
+        meta.addEnchant(Enchantment.KNOCKBACK, 2, true);
+        meta.addEnchant(Enchantment.FIRE_ASPECT, 2, true);
+        meta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 3, true);
+
+        List<String> xcal = new ArrayList<String>();
+        xcal.add(ChatColor.DARK_GRAY + "The essential PVP sword!");
+        meta.setLore(xcal);
+
+        item.setItemMeta(meta);
+        excalibur = item;
+
+    }
+
+    private static void SPARRINGAXE(){
+        ItemStack item = new ItemStack(Material.WOOD_AXE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bSparring Axe");
+        meta.addEnchant(Enchantment.DAMAGE_ALL, 10, true);
+        meta.addEnchant(Enchantment.DURABILITY, 10, true);
+        meta.addEnchant(Enchantment.FIRE_ASPECT, 5, true);
+
+        List<String> saxe = new ArrayList<String>();
+        saxe.add(ChatColor.DARK_GRAY + "The third wood tier weapon!");
+        meta.setLore(saxe);
+
+        item.setItemMeta(meta);
+        sparringaxe = item;
+
+    }
+
+    private static void MORNINGWOOD(){
+        ItemStack item = new ItemStack(Material.WOOD_SWORD, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bMorning Wood");
+        meta.addEnchant(Enchantment.DAMAGE_ALL, 10, true);
+        meta.addEnchant(Enchantment.DURABILITY, 10, true);
+
+        List<String> mw = new ArrayList<String>();
+        mw.add(ChatColor.DARK_GRAY + "The first wood tier weapon!");
+        meta.setLore(mw);
+
+        item.setItemMeta(meta);
+        morningwood = item;
+
+    }
+
+    private static void MORNINGBJ(){
+        ItemStack item = new ItemStack(Material.WOOD_SWORD, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bMorning BJ");
+        meta.addEnchant(Enchantment.DAMAGE_ALL, 10, true);
+        meta.addEnchant(Enchantment.FIRE_ASPECT, 10, true);
+
+        List<String> mbj = new ArrayList<String>();
+        mbj.add(ChatColor.DARK_GRAY + "The second wood tier weapon!");
+        meta.setLore(mbj);
+
+        item.setItemMeta(meta);
+        morningbj = item;
+
+    }
+
+    private static void PROTVBOOTS() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_BOOTS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt V");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection V Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot5boots = item;
+
+    }
+
+    private static void PROTVLEGS() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_LEGGINGS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt V");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection V Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot5legs = item;
+
+    }
+
+    private static void PROTVCHEST() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_CHESTPLATE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt V");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection V Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot5chest = item;
+
+    }
+
+    private static void PROTVHELM() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_HELMET, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt V");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection V Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot5helm = item;
+
+    }
+
+    private static void PROTIVBOOTS() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_BOOTS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt IV");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection IV Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot4boots = item;
+
+    }
+
+    private static void PROTIVLEGS() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_LEGGINGS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt IV");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection IV Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot4legs = item;
+
+    }
+
+    private static void PROTIVCHEST() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_CHESTPLATE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt IV");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection IV Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot4chest = item;
+
+    }
+
+    private static void PROTIVHELM() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_HELMET, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt IV");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection IV Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot4helm = item;
+
+    }
+
+    private static void PROTIVAEBOOTS() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_BOOTS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt IV AE");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_FIRE, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_FALL, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 4, true);
+
+
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection IV AE Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot4aeboots = item;
+
+    }
+
+    private static void PROTIVAELEGS() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_LEGGINGS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt IV AE");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_FIRE, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 4, true);
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection IV AE Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot4aelegs = item;
+
+    }
+
+    private static void PROTIVAECHEST() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_CHESTPLATE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt IV AE");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_FIRE, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 4, true);
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection IV AE Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot4aechest = item;
+
+    }
+
+    private static void PROTIVAEHELM() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_HELMET, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt IV AE");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_FIRE, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 4, true);
+        meta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 4, true);
+        meta.addEnchant(Enchantment.OXYGEN, 4, true);
+        meta.addEnchant(Enchantment.WATER_WORKER, 4, true);
+
+
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection IV AE Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot4aehelm = item;
+
+    }
+
+    private static void PROTVAEBOOTS() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_BOOTS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt V AE");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_FIRE, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_FALL, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 5, true);
+
+
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection V AE Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot5aeboots = item;
+
+    }
+
+    private static void PROTVAELEGS() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_LEGGINGS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt V AE");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_FIRE, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 5, true);
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection V AE Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot5aelegs = item;
+
+    }
+
+    private static void PROTVAECHEST() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_CHESTPLATE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt V AE");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_FIRE, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 5, true);
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection V AE Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot5aechest = item;
+
+    }
+
+    private static void PROTVAEHELM() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_HELMET, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt V AE");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_FIRE, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 5, true);
+        meta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 5, true);
+        meta.addEnchant(Enchantment.OXYGEN, 5, true);
+        meta.addEnchant(Enchantment.WATER_WORKER, 5, true);
+
+
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection V AE Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot5aehelm = item;
+
+    }
+
+    private static void PROTVIAEBOOTS() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_BOOTS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt VI AE");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_FIRE, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_FALL, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 6, true);
+
+
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection VI AE Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot6aeboots = item;
+
+    }
+
+    private static void PROTVIAELEGS() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_LEGGINGS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt VI AE");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_FIRE, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 6, true);
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection VI AE Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot6aelegs = item;
+
+    }
+
+    private static void PROTVIAECHEST() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_CHESTPLATE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt VI AE");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_FIRE, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 6, true);
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection VI AE Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot6aechest = item;
+
+    }
+
+    private static void PROTVIAEHELM() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_HELMET, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bProt VI AE");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_FIRE, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_EXPLOSIONS, 6, true);
+        meta.addEnchant(Enchantment.PROTECTION_PROJECTILE, 6, true);
+        meta.addEnchant(Enchantment.OXYGEN, 6, true);
+        meta.addEnchant(Enchantment.WATER_WORKER, 6, true);
+
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.DARK_GRAY + "Authentic Protection VI AE Armor");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        prot6aehelm = item;
+    }
+
+
+    }

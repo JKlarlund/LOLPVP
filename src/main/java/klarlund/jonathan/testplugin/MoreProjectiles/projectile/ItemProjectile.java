@@ -1,4 +1,4 @@
-package MoreProjectiles.projectile;
+package klarlund.jonathan.testplugin.MoreProjectiles.projectile;
 
 /*
 Commenting out the dependency classes
@@ -7,9 +7,9 @@ Commenting out the dependency classes
 //import com.stirante.MoreProjectiles.event.CustomProjectileHitEvent;
 //import com.stirante.MoreProjectiles.event.ItemProjectileHitEvent;
 
-import MoreProjectiles.TypedRunnable;
-import MoreProjectiles.event.CustomProjectileHitEvent;
-import MoreProjectiles.event.ItemProjectileHitEvent;
+import klarlund.jonathan.testplugin.MoreProjectiles.TypedRunnable;
+import klarlund.jonathan.testplugin.MoreProjectiles.event.CustomProjectileHitEvent;
+import klarlund.jonathan.testplugin.MoreProjectiles.event.ItemProjectileHitEvent;
 import net.minecraft.server.v1_8_R3.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -22,6 +22,7 @@ import org.bukkit.craftbukkit.v1_8_R3.inventory.CraftItemStack;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.event.Event;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -59,7 +60,7 @@ public class ItemProjectile extends EntityItem implements IProjectile, CustomPro
      */
     @SuppressWarnings("deprecation")
     //Constructor to initialize ItemProjectile object.
-    public ItemProjectile(String name, Location loc, org.bukkit.inventory.ItemStack itemstack, LivingEntity shooter, float power) {
+    public ItemProjectile(String name, Location loc, ItemStack itemstack, LivingEntity shooter, float power) {
         super(((CraftWorld) loc.getWorld()).getHandle(), loc.getX(), loc.getY(), loc.getZ(), null);
         /*
         If player isn't holding anything, it will print "You cannot shoot air!" in console
@@ -99,7 +100,7 @@ public class ItemProjectile extends EntityItem implements IProjectile, CustomPro
      * @param item    item stack to shoot
      * @param power   projectile power
      */
-    public ItemProjectile(String name, LivingEntity shooter, org.bukkit.inventory.ItemStack item, float power) {
+    public ItemProjectile(String name, LivingEntity shooter, ItemStack item, float power) {
         super(((CraftLivingEntity) shooter).getHandle().world);
         this.name = name;
         this.pickupDelay = Integer.MAX_VALUE;
@@ -127,8 +128,8 @@ public class ItemProjectile extends EntityItem implements IProjectile, CustomPro
 //    @Override
 //    public void s_() {
     //Calling the method something different and removing override. I have no clue...
-
-    public void s_t(){
+//Commenting out this function, since this is what causes emp not to be removed!
+/*    public void s_t(){
         K();
         BlockPosition blockposition = new BlockPosition(locX, locY, locZ);
         IBlockData iblockdata = world.getType(blockposition);
@@ -141,7 +142,7 @@ public class ItemProjectile extends EntityItem implements IProjectile, CustomPro
                 float damageMultiplier = MathHelper.sqrt(motX * motX + motY * motY + motZ * motZ);
                 //Changing below hitevents from Stirante to here.
                 //Autofix recasting
-                CustomProjectileHitEvent event = new ItemProjectileHitEvent((MoreProjectiles.projectile.CustomProjectile) this, damageMultiplier, world.getWorld().getBlockAt((int) locX, (int) locY, (int) locZ), BlockFace.UP, getItem());
+                CustomProjectileHitEvent event = new ItemProjectileHitEvent((CustomProjectile) this, damageMultiplier, world.getWorld().getBlockAt((int) locX, (int) locY, (int) locZ), BlockFace.UP, getItem());
                 Bukkit.getPluginManager().callEvent(event);
                 if (!event.isCancelled()) {
                     die();
@@ -194,7 +195,7 @@ public class ItemProjectile extends EntityItem implements IProjectile, CustomPro
             if (movingobjectposition.entity != null && movingobjectposition.entity instanceof EntityLiving) {
                 float damageMultiplier = MathHelper.sqrt(motX * motX + motY * motY + motZ * motZ);
                 //Recasting this line
-                CustomProjectileHitEvent event = new ItemProjectileHitEvent((MoreProjectiles.projectile.CustomProjectile) this, damageMultiplier, (LivingEntity) movingobjectposition.entity.getBukkitEntity(), getItem());
+                CustomProjectileHitEvent event = new ItemProjectileHitEvent((CustomProjectile) this, damageMultiplier, (LivingEntity) movingobjectposition.entity.getBukkitEntity(), getItem());
                 Bukkit.getPluginManager().callEvent(event);
                 if (!event.isCancelled()) {
                     if (getKnockback() > 0) {
@@ -216,7 +217,7 @@ public class ItemProjectile extends EntityItem implements IProjectile, CustomPro
                     locZ -= motZ / f3 * 0.0500000007450581D;
                     float damageMultiplier = MathHelper.sqrt(motX * motX + motY * motY + motZ * motZ);
                     //Recasting Customprojectile this
-                    CustomProjectileHitEvent event = new ItemProjectileHitEvent((MoreProjectiles.projectile.CustomProjectile) this, damageMultiplier, world.getWorld().getBlockAt((int) movingobjectposition.pos.a, (int) movingobjectposition.pos.b, (int) movingobjectposition.pos.c), CraftBlock.notchToBlockFace(movingobjectposition.direction), getItem());
+                    CustomProjectileHitEvent event = new ItemProjectileHitEvent((CustomProjectile) this, damageMultiplier, world.getWorld().getBlockAt((int) movingobjectposition.pos.a, (int) movingobjectposition.pos.b, (int) movingobjectposition.pos.c), CraftBlock.notchToBlockFace(movingobjectposition.direction), getItem());
                     Bukkit.getPluginManager().callEvent(event);
                     if (!event.isCancelled()) {
                         die();
@@ -246,6 +247,105 @@ public class ItemProjectile extends EntityItem implements IProjectile, CustomPro
             for (TypedRunnable<ItemProjectile> r : typedRunnables) {
                 r.run(this);
             }
+        }
+    }*/
+
+    //Inserted from JAR code...
+
+    public void t_() {
+        K();
+        BlockPosition blockposition = new BlockPosition(this.locX, this.locY, this.locZ);
+        IBlockData iblockdata = this.world.getType(blockposition);
+        Block block = iblockdata.getBlock();
+        if (!this.ignoredMaterials.contains(Material.getMaterial(Block.getId(block)))) {
+            AxisAlignedBB axisalignedbb = block.a(this.world, blockposition, iblockdata);
+            if (axisalignedbb != null && axisalignedbb.a(new Vec3D(this.locX, this.locY, this.locZ))) {
+                float damageMultiplier = MathHelper.sqrt(this.motX * this.motX + this.motY * this.motY + this.motZ * this.motZ);
+                ItemProjectileHitEvent itemProjectileHitEvent = new ItemProjectileHitEvent(this, damageMultiplier, this.world.getWorld().getBlockAt((int)this.locX, (int)this.locY, (int)this.locZ), BlockFace.UP, getItem());
+                Bukkit.getPluginManager().callEvent((Event)itemProjectileHitEvent);
+                if (!itemProjectileHitEvent.isCancelled())
+                    die();
+            }
+        }
+        this.age++;
+        Vec3D vec3d = new Vec3D(this.locX, this.locY, this.locZ);
+        Vec3D vec3d1 = new Vec3D(this.locX + this.motX, this.locY + this.motY, this.locZ + this.motZ);
+        MovingObjectPosition movingobjectposition = this.world.rayTrace(vec3d, vec3d1, false, true, false);
+        vec3d = new Vec3D(this.locX, this.locY, this.locZ);
+        vec3d1 = new Vec3D(this.locX + this.motX, this.locY + this.motY, this.locZ + this.motZ);
+        if (movingobjectposition != null)
+            vec3d1 = new Vec3D(movingobjectposition.pos.a, movingobjectposition.pos.b, movingobjectposition.pos.c);
+        Entity entity = null;
+        List<Entity> list = this.world.getEntities((Entity)this, getBoundingBox().a(this.motX, this.motY, this.motZ).grow(1.0D, 1.0D, 1.0D));
+        double d0 = 0.0D;
+        for (Entity aList : list) {
+            Entity entity1 = aList;
+            if (entity1.ad() && (entity1 != this.shooter || this.age >= 5)) {
+                float f = 0.3F;
+                AxisAlignedBB axisalignedbb1 = entity1.getBoundingBox().grow(f, f, f);
+                MovingObjectPosition movingobjectposition1 = axisalignedbb1.a(vec3d, vec3d1);
+                if (movingobjectposition1 != null) {
+                    double d1 = vec3d.distanceSquared(movingobjectposition1.pos);
+                    if (d1 < d0 || d0 == 0.0D) {
+                        entity = entity1;
+                        d0 = d1;
+                    }
+                }
+            }
+        }
+        if (entity != null)
+            movingobjectposition = new MovingObjectPosition(entity);
+        if (movingobjectposition != null && movingobjectposition.entity != null && movingobjectposition.entity instanceof EntityHuman) {
+            EntityHuman entityhuman = (EntityHuman)movingobjectposition.entity;
+            if (entityhuman.abilities.isInvulnerable || (this.shooter instanceof EntityHuman && !((EntityHuman)this.shooter).a(entityhuman)))
+                movingobjectposition = null;
+        }
+        if (movingobjectposition != null)
+            if (movingobjectposition.entity != null && movingobjectposition.entity instanceof EntityLiving) {
+                float damageMultiplier = MathHelper.sqrt(this.motX * this.motX + this.motY * this.motY + this.motZ * this.motZ);
+                ItemProjectileHitEvent itemProjectileHitEvent = new ItemProjectileHitEvent(this, damageMultiplier, (LivingEntity)movingobjectposition.entity.getBukkitEntity(), getItem());
+                Bukkit.getPluginManager().callEvent((Event)itemProjectileHitEvent);
+                if (!itemProjectileHitEvent.isCancelled()) {
+                    if (getKnockback() > 0) {
+                        float f4 = MathHelper.sqrt(this.motX * this.motX + this.motZ * this.motZ);
+                        if (f4 > 0.0F)
+                            movingobjectposition.entity.g(this.motX * getKnockback() * 0.6000000238418579D / f4, 0.1D, this.motZ * getKnockback() * 0.6000000238418579D / f4);
+                    }
+                    die();
+                }
+            } else if (movingobjectposition.a() != null &&
+                    !this.ignoredMaterials.contains(Material.getMaterial(Block.getId(block)))) {
+                this.motX = (float)(movingobjectposition.pos.a - this.locX);
+                this.motY = (float)(movingobjectposition.pos.b - this.locY);
+                this.motZ = (float)(movingobjectposition.pos.c - this.locZ);
+                float f2 = MathHelper.sqrt(this.motX * this.motX + this.motY * this.motY + this.motZ * this.motZ);
+                this.locX -= this.motX / f2 * 0.0500000007450581D;
+                this.locY -= this.motY / f2 * 0.0500000007450581D;
+                this.locZ -= this.motZ / f2 * 0.0500000007450581D;
+                float damageMultiplier = MathHelper.sqrt(this.motX * this.motX + this.motY * this.motY + this.motZ * this.motZ);
+                ItemProjectileHitEvent itemProjectileHitEvent = new ItemProjectileHitEvent(this, damageMultiplier, this.world.getWorld().getBlockAt((int)movingobjectposition.pos.a, (int)movingobjectposition.pos.b, (int)movingobjectposition.pos.c), CraftBlock.notchToBlockFace(movingobjectposition.direction), getItem());
+                Bukkit.getPluginManager().callEvent((Event)itemProjectileHitEvent);
+                if (!itemProjectileHitEvent.isCancelled())
+                    die();
+            }
+        this.locX += this.motX;
+        this.locY += this.motY;
+        this.locZ += this.motZ;
+        float f3 = 0.99F;
+        float f1 = 0.05F;
+        this.motX *= f3;
+        this.motY *= f3;
+        this.motZ *= f3;
+        this.motY -= f1;
+        setPosition(this.locX, this.locY, this.locZ);
+        checkBlockCollisions();
+        if (isAlive()) {
+            if (this.age >= 1000)
+                die();
+            for (Runnable r : this.runnables)
+                r.run();
+            for (TypedRunnable<ItemProjectile> r : this.typedRunnables)
+                r.run(this);
         }
     }
 
@@ -291,7 +391,7 @@ public class ItemProjectile extends EntityItem implements IProjectile, CustomPro
         if (entityhuman == shooter && age <= 3) return;
         LivingEntity living = entityhuman.getBukkitEntity();
         //Recasting this
-        CustomProjectileHitEvent event = new ItemProjectileHitEvent((MoreProjectiles.projectile.CustomProjectile) this, 0.5F, living, getItem());
+        CustomProjectileHitEvent event = new ItemProjectileHitEvent((CustomProjectile) this, 0.5F, living, getItem());
         Bukkit.getPluginManager().callEvent(event);
         if (!event.isCancelled()) {
             die();

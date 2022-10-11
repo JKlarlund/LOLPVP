@@ -5,6 +5,7 @@ import klarlund.jonathan.testplugin.items.ItemManager;
 import me.confuser.barapi.BarAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -120,46 +121,48 @@ public class InvisRing implements Listener {
 
     @EventHandler
     public void onInteract(PlayerInteractEvent event) {
-        if (event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
-            if (event.getPlayer().getItemInHand().getItemMeta().equals(ItemManager.invisring.getItemMeta())) {
-                Player player = event.getPlayer();
-                event.setCancelled(true);
+        Player player = event.getPlayer();
+        if(player.getItemInHand().getType() != Material.AIR) {
+            if (event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
+                if (event.getPlayer().getItemInHand().getItemMeta().equals(ItemManager.invisring.getItemMeta())) {
+                    event.setCancelled(true);
 
-                if (invislist.containsKey(event.getPlayer().getUniqueId())) {
-                    for (Player o : Bukkit.getServer().getOnlinePlayers()) {
-                        o.showPlayer(player);
-                    }
-                    invislist.remove(player.getUniqueId());
-                    BarAPI.removeBar(player);
-                    player.sendMessage(ChatColor.RED + "You are no longer invisible.");
-
-                } else if (!warm.containsKey(player.getUniqueId())) {
-                    int wait = 5;
-                    player.sendMessage(ChatColor.GRAY + "Vanishing in " + ChatColor.AQUA + wait + ChatColor.GRAY + " seconds.");
-                    warm.put(event.getPlayer().getUniqueId(), Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
-                        @Override
-                        public void run() {
-                            BarAPI.setMessage(player, ChatColor.RED + "" + ChatColor.BOLD + "You are invisible!");
-                            player.sendMessage(ChatColor.GREEN + "You are now invisible.");
-                            warm.remove(player.getUniqueId());
-                            invislist.put(event.getPlayer().getUniqueId(), System.currentTimeMillis());
-                            for (Player p : Bukkit.getOnlinePlayers()) {
-                                p.hidePlayer(player);
-                            }
-                            new BukkitRunnable() {
-                                public void run() {
-
-                                    if (invislist.containsKey(player.getUniqueId())) {
-                                        BarAPI.setMessage(player, ChatColor.RED + "" + ChatColor.BOLD + "You are invisible!");
-
-
-                                    } else {
-                                        cancel();
-                                    }
-                                }
-                            }.runTaskTimer(plugin, 0, 400L);
+                    if (invislist.containsKey(event.getPlayer().getUniqueId())) {
+                        for (Player o : Bukkit.getServer().getOnlinePlayers()) {
+                            o.showPlayer(player);
                         }
-                    }, wait * 20L));
+                        invislist.remove(player.getUniqueId());
+                        BarAPI.removeBar(player);
+                        player.sendMessage(ChatColor.RED + "You are no longer invisible.");
+
+                    } else if (!warm.containsKey(player.getUniqueId())) {
+                        int wait = 5;
+                        player.sendMessage(ChatColor.GRAY + "Vanishing in " + ChatColor.AQUA + wait + ChatColor.GRAY + " seconds.");
+                        warm.put(event.getPlayer().getUniqueId(), Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+                            @Override
+                            public void run() {
+                                BarAPI.setMessage(player, ChatColor.RED + "" + ChatColor.BOLD + "You are invisible!");
+                                player.sendMessage(ChatColor.GREEN + "You are now invisible.");
+                                warm.remove(player.getUniqueId());
+                                invislist.put(event.getPlayer().getUniqueId(), System.currentTimeMillis());
+                                for (Player p : Bukkit.getOnlinePlayers()) {
+                                    p.hidePlayer(player);
+                                }
+                                new BukkitRunnable() {
+                                    public void run() {
+
+                                        if (invislist.containsKey(player.getUniqueId())) {
+                                            BarAPI.setMessage(player, ChatColor.RED + "" + ChatColor.BOLD + "You are invisible!");
+
+
+                                        } else {
+                                            cancel();
+                                        }
+                                    }
+                                }.runTaskTimer(plugin, 0, 400L);
+                            }
+                        }, wait * 20L));
+                    }
                 }
             }
         }

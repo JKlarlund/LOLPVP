@@ -1,4 +1,4 @@
-package MoreProjectiles.projectile;
+package klarlund.jonathan.testplugin.MoreProjectiles.projectile;
 
 /*
 Commenting out dependency
@@ -6,7 +6,7 @@ Commenting out dependency
 
 //import com.stirante.MoreProjectiles.TypedRunnable;
 
-import MoreProjectiles.TypedRunnable;
+import klarlund.jonathan.testplugin.MoreProjectiles.TypedRunnable;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;

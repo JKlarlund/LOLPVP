@@ -44,7 +44,7 @@ commands:
   ironman:
     usage: /ironman
     permission: testplugin.ironman
-    aliases: [im, i]
+    aliases: [im]
   regen:
     usage: /regen
     permission: testplugin.regen
@@ -95,7 +95,33 @@ commands:
   emp:
     usage: /emp
     permission: testplugin.emp
-
-
-
-
+  excalibur:
+    usage: /excalibur
+    permission: testplugin.excalibur
+  morningwood:
+    usage: /morningwood
+    permission: testplugin.morningwood
+  morningbj:
+    usage: /morningbj
+    permission: testplugin.morningbj
+  sparringaxe:
+    usage: /sparringaxe
+    permission: testplugin.sparringaxe
+  pvpchest:
+    usage: /pvpchest
+    permission: testplugin.pvpchest
+  prot5:
+    usage: /prot5
+    permission: testplugin.prot5
+  prot4:
+    usage: /prot4
+    permission: testplugin.prot4
+  prot4ae:
+    usage: /prot4ae
+    permission: testplugin.prot4ae
+  prot5ae:
+    usage: /prot5ae
+    permission: testplugin.prot5ae
+  prot6ae:
+    usage: /prot6ae
+    permission: testplugin.prot6ae

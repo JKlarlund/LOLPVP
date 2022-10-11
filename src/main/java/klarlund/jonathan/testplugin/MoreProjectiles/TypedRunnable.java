@@ -1,4 +1,4 @@
-package MoreProjectiles;
+package klarlund.jonathan.testplugin.MoreProjectiles;
 
 public interface TypedRunnable<T> {
 

@@ -1,4 +1,4 @@
-package MoreProjectiles.event;
+package klarlund.jonathan.testplugin.MoreProjectiles.event;
 
 /*
 Commenting out dependency
@@ -6,8 +6,7 @@ Commenting out dependency
 //import com.stirante.MoreProjectiles.event.CustomProjectileHitEvent;
 //import com.stirante.MoreProjectiles.projectile.CustomProjectile;
 
-import MoreProjectiles.event.CustomProjectileHitEvent;
-import MoreProjectiles.projectile.CustomProjectile;
+import klarlund.jonathan.testplugin.MoreProjectiles.projectile.CustomProjectile;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.LivingEntity;

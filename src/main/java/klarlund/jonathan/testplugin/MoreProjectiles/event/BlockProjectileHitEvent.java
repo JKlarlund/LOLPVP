@@ -1,10 +1,9 @@
-package MoreProjectiles.event;
+package klarlund.jonathan.testplugin.MoreProjectiles.event;
 
 //import com.stirante.MoreProjectiles.event.CustomProjectileHitEvent;
 //import com.stirante.MoreProjectiles.projectile.CustomProjectile;
 
-import MoreProjectiles.projectile.CustomProjectile;
-import MoreProjectiles.event.CustomProjectileHitEvent;
+import klarlund.jonathan.testplugin.MoreProjectiles.projectile.CustomProjectile;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;

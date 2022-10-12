@@ -14,7 +14,7 @@ public class PVPChestData {
 
     public List<ItemStack> GoodItems;
 
-    public List<ItemStack> Consumables;
+    public List<ItemStack> Potions;
 
     public List<ItemStack> Armor;
 
@@ -35,15 +35,15 @@ public class PVPChestData {
         this.GoodItems.add(ItemManager.morningwood);
         this.GoodItems.add(ItemManager.sparringaxe);
 
-        this.Consumables = new ArrayList<>();
-        this.Consumables.add(new ItemStack(Material.POTION, 1, (short) 8226));
-        this.Consumables.add(new ItemStack(Material.POTION, 1, (short) 16418));
-        this.Consumables.add(new ItemStack(Material.POTION, 1, (short) 16421));
-        this.Consumables.add(new ItemStack(Material.POTION, 1, (short) 8229));
-        this.Consumables.add(new ItemStack(Material.POTION, 1, (short) 8270));
-        this.Consumables.add(new ItemStack(Material.POTION, 1, (short) 16452));
-        this.Consumables.add(new ItemStack(Material.POTION, 1, (short) 8289));
-        this.Consumables.add(new ItemStack(Material.POTION, 1, (short) 8257));
+        this.Potions = new ArrayList<>();
+        this.Potions.add(new ItemStack(Material.POTION, 1, (short) 8226));
+        this.Potions.add(new ItemStack(Material.POTION, 1, (short) 16418));
+        this.Potions.add(new ItemStack(Material.POTION, 1, (short) 16421));
+        this.Potions.add(new ItemStack(Material.POTION, 1, (short) 8229));
+        this.Potions.add(new ItemStack(Material.POTION, 1, (short) 8270));
+        this.Potions.add(new ItemStack(Material.POTION, 1, (short) 16452));
+        this.Potions.add(new ItemStack(Material.POTION, 1, (short) 8289));
+        this.Potions.add(new ItemStack(Material.POTION, 1, (short) 8257));
 
         //0-3
         this.Armor = new ArrayList<>();
@@ -69,7 +69,7 @@ public class PVPChestData {
 
     public List<ItemStack> getConsumableData(){
 
-        return Consumables;
+        return Potions;
     }
 
     public List<ItemStack> getGoodItems(){

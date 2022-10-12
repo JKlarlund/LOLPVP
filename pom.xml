@@ -69,11 +69,6 @@
         </repository>
 
         <repository>
-            <id>confuser-repo</id>
-            <url>http://ci.frostcast.net/plugin/repository/everything</url>
-        </repository>
-
-        <repository>
             <id>inventive-repo</id>
             <url>https://repo.inventivetalent.org/content/groups/public/</url>
         </repository>
@@ -91,11 +86,6 @@
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
-        </repository>
-
-        <repository>
-            <id>sinndev-repo</id>
-            <url>http://repo.sinndev.com/content/groups/public/</url>
         </repository>
 
 

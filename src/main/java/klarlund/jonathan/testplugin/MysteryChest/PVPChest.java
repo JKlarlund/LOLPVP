@@ -34,9 +34,13 @@ public class PVPChest implements Listener {
                 event.setCancelled(true);
 
                 Random NumberGenerator = new Random();
+                //Determines what item(s) player will be given, selected randomly from a list of weapons:
                 int RandomBallerWeapon = NumberGenerator.nextInt(ChestData.BallerWeapon.size());
                 int RandomGoodWeapon = NumberGenerator.nextInt(ChestData.GoodItems.size());
+
+                //Gives a number from 0 to 99 to use to figure out what type/quality of item player is given
                 int BallerChance = NumberGenerator.nextInt(99);
+                int ArmorChance = NumberGenerator.nextInt(99);
 
                 //20% chance of getting a baller item. This is one item
                 if(BallerChance<19){
@@ -51,13 +55,19 @@ public class PVPChest implements Listener {
                     player.getInventory().addItem(ItemManager.rocketboots);
                 }
 
+                //Chance of getting armor.
+                //Sol: Split up variations of additem to concrete pieces between probability
+                if(ArmorChance <= 10){
+                    player.getInventory().addItem();
+                }
+
                 //Give three enchanted apples (1 item)
                 player.getInventory().addItem(new ItemStack(Material.GOLDEN_APPLE, 5, (short) 1));
 
                 //Give three random potions (3 items)
-                player.getInventory().addItem(ChestData.Consumables.get(NumberGenerator.nextInt(7)));
-                player.getInventory().addItem(ChestData.Consumables.get(NumberGenerator.nextInt(7)));
-                player.getInventory().addItem(ChestData.Consumables.get(NumberGenerator.nextInt(7)));
+                player.getInventory().addItem(ChestData.Potions.get(NumberGenerator.nextInt(7)));
+                player.getInventory().addItem(ChestData.Potions.get(NumberGenerator.nextInt(7)));
+                player.getInventory().addItem(ChestData.Potions.get(NumberGenerator.nextInt(7)));
 
 
 
@@ -66,47 +76,6 @@ public class PVPChest implements Listener {
 
 
             }
-
-
         }
-
-
-
-        //Something about null needs to be here
-//        if(player.getItemInHand().getItemMeta().equals("Chest")){
-//            if (event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)){
-//
-//                List<ItemStack> PVPChestData = new BallerItems();
-//
-//                DataLength = Data.length;
-//
-//                Random random = new Random();
-//                int RandomNumber = random.nextInt(Data.length);
-//
-//                ItemStack RandomItem = Data[RandomNumber];
-//
-//                player.getInventory().addItem(RandomItem);
-
-                //Keep on with this...
-
-
-
-
-
-
-            //}
-
-
-
-
-        //}
-
-
     }
-
-
-
-
-
-
 }

@@ -337,7 +337,7 @@ public class ItemManager {
     private static void CreateBAXE(){
         ItemStack item = new ItemStack(Material.DIAMOND_AXE, 1);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(ChatColor.BLUE + "Battle Axe");
+        meta.setDisplayName(ChatColor.AQUA + "Battle Axe");
         meta.addEnchant(Enchantment.DAMAGE_ALL, 10, true);
         meta.addEnchant(Enchantment.DAMAGE_UNDEAD, 10, true);
         meta.addEnchant(Enchantment.DAMAGE_ARTHROPODS, 10, true);

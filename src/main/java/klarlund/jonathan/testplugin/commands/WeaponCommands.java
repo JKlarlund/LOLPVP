@@ -41,6 +41,15 @@ public class WeaponCommands implements CommandExecutor {
         if (command.getName().equalsIgnoreCase("prot6helm")) {
             player.getInventory().addItem(ItemManager.prot6helm);
         }
+        if (command.getName().equalsIgnoreCase("prot6")) {
+            player.getInventory().addItem(ItemManager.prot6boots);
+            player.getInventory().addItem(ItemManager.prot6legs);
+            player.getInventory().addItem(ItemManager.prot6chest);
+            player.getInventory().addItem(ItemManager.prot6helm);
+
+
+        }
+
         if (command.getName().equalsIgnoreCase("enderbow")) {
             player.getInventory().addItem((ItemManager.enderbow));
         }

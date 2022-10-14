@@ -4,7 +4,6 @@ import klarlund.jonathan.testplugin.MysteryChest.ChestManager;
 import klarlund.jonathan.testplugin.MysteryChest.PVPChest;
 import klarlund.jonathan.testplugin.commands.Kits;
 import klarlund.jonathan.testplugin.commands.WeaponCommands;
-import klarlund.jonathan.testplugin.events.unusedDeathChest;
 import klarlund.jonathan.testplugin.weaponevents.*;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import net.milkbowl.vault.economy.Economy;
@@ -43,7 +42,6 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Rocketboots(this), this);
         getServer().getPluginManager().registerEvents(new Angelwings(this), this);
         getServer().getPluginManager().registerEvents(new Payday(this), this);
-        getServer().getPluginManager().registerEvents(new unusedDeathChest(this),this);
         getServer().getPluginManager().registerEvents(new EMP(), this);
         getServer().getPluginManager().registerEvents(new PVPChest(), this);
         getCommand("wifebeater").setExecutor(new WeaponCommands());

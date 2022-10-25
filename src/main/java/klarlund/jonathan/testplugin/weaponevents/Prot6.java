@@ -26,7 +26,6 @@ public class Prot6 implements Listener {
                                     if(playerarmor.getHelmet()!=null){
                                         if(playerarmor.getHelmet().getItemMeta().equals(ItemManager.prot6helm.getItemMeta()) || playerarmor.getHelmet().getItemMeta().equals(ItemManager.prot6aehelm.getItemMeta())){
                                             event.setDamage(event.getDamage() - event.getDamage() * 0.3);
-                                            Bukkit.getServer().getConsoleSender().sendMessage("Damage was reduced");
                                         }
                                     }
                                 }

@@ -17,6 +17,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class Main extends JavaPlugin {
 
     private static Economy econ = null;
+
     
     @Override
     public void onEnable() {
@@ -30,6 +31,8 @@ public final class Main extends JavaPlugin {
         Bukkit.getLogger().info("Working.");
         ItemManager.init();
         ChestManager.init();
+
+
 
         getServer().getPluginManager().registerEvents(new InvisRing(this), this);
         getServer().getPluginManager().registerEvents(new Wifebeater(), this);
@@ -45,6 +48,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Payday(this), this);
         getServer().getPluginManager().registerEvents(new EMP(), this);
         getServer().getPluginManager().registerEvents(new PVPChest(), this);
+        getServer().getPluginManager().registerEvents(new MagicSperm(this), this);
         getServer().getPluginManager().registerEvents(new SignManager(), this);
         getCommand("wifebeater").setExecutor(new WeaponCommands());
         getCommand("ejacul8").setExecutor(new WeaponCommands());
@@ -80,6 +84,7 @@ public final class Main extends JavaPlugin {
         getCommand("prot4ae").setExecutor(new WeaponCommands());
         getCommand("prot5ae").setExecutor(new WeaponCommands());
         getCommand("prot6ae").setExecutor(new WeaponCommands());
+        getCommand("magicsperm").setExecutor(new WeaponCommands());
 
 
 

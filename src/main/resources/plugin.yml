@@ -125,3 +125,6 @@ commands:
   prot6ae:
     usage: /prot6ae
     permission: testplugin.prot6ae
+  magicsperm:
+    usage: /magicsperm
+    permission: testplugin.magicsperm

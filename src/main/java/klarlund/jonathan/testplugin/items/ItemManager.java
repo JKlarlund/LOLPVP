@@ -96,6 +96,7 @@ public class ItemManager {
 
     public static ItemStack prot6aeboots;
 
+    public static ItemStack magicsperm;
 
     public static void init() {
         CreateWifeBeater();
@@ -140,6 +141,7 @@ public class ItemManager {
         PROTVIAELEGS();
         PROTVIAECHEST();
         PROTVIAEHELM();
+        MAGICSPERM();
 
     }
 
@@ -926,6 +928,26 @@ public class ItemManager {
         item.setItemMeta(meta);
 
         prot6aehelm = item;
+    }
+
+    private static void MAGICSPERM() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_SWORD, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bMagic Sperm");
+        meta.addEnchant(Enchantment.DAMAGE_ALL, 10, true);
+        meta.addEnchant(Enchantment.DAMAGE_UNDEAD, 10, true);
+        meta.addEnchant(Enchantment.DURABILITY, 10, true);
+
+
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.GRAY + "Invisibility I");
+        vilore.add(ChatColor.DARK_GRAY + "Hit enemies to become invisible!");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        magicsperm = item;
     }
 
 

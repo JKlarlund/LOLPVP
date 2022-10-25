@@ -95,6 +95,9 @@ public class WeaponCommands implements CommandExecutor {
         if (command.getName().equalsIgnoreCase("excalibur")) {
             player.getInventory().addItem(ItemManager.excalibur);
         }
+        if (command.getName().equalsIgnoreCase("magicsperm")) {
+            player.getInventory().addItem(ItemManager.magicsperm);
+        }
 
         if (command.getName().equalsIgnoreCase("prot5")){
             player.getInventory().addItem(ItemManager.prot5boots);

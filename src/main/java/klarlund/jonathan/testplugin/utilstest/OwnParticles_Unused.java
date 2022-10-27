@@ -1,6 +1,7 @@
 package klarlund.jonathan.testplugin.utilstest;
 
 import net.minecraft.server.v1_8_R3.EnumParticle;
+import net.minecraft.server.v1_8_R3.Packet;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
@@ -44,6 +45,15 @@ public class OwnParticles_Unused {
         // When specifying second input, you do getPlayersInRange(Location player.getlocation, 20D)
         //Range cannot be >20!
 
+    }
+
+    public void spawnParticleSnow(Location loc, List<Player> players){
+        PacketPlayOutWorldParticles packetparticle = new PacketPlayOutWorldParticles(EnumParticle.SNOW_SHOVEL, true, (float) loc.getX(), (float) loc.getY(), (float) loc.getZ(),
+                0 ,0, 0, 1, 1);
+
+        for (Player p: players){
+            ((CraftPlayer) p).getHandle().playerConnection.sendPacket(packetparticle);
+        }
     }
 
 

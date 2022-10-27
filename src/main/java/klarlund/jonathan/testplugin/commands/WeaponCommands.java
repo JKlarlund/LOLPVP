@@ -135,6 +135,14 @@ public class WeaponCommands implements CommandExecutor {
             player.getInventory().addItem(ItemManager.prot6aehelm);
 
         }
+
+        if (command.getName().equalsIgnoreCase("snowarmor")){
+            player.getInventory().addItem(ItemManager.snowboots);
+            player.getInventory().addItem(ItemManager.snowlegs);
+            player.getInventory().addItem(ItemManager.snowchest);
+            player.getInventory().addItem(ItemManager.snowhelm);
+        }
+
         return true;
 
     }

@@ -128,3 +128,6 @@ commands:
   magicsperm:
     usage: /magicsperm
     permission: testplugin.magicsperm
+  snowarmor:
+    usage: /snowarmor
+    permission: testplugin.snowhelm

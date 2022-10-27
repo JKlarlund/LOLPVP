@@ -38,36 +38,31 @@ public class Payday implements Listener {
         {
             Player player = (Player)event.getDamager();
             Player hit = (Player)event.getDamager();
-            if(player.getItemInHand().getItemMeta().equals(ItemManager.payday.getItemMeta()))
-            {
-                final Firework fw = (Firework) player.getWorld().spawnEntity(hit.getLocation(), EntityType.FIREWORK);
-                FireworkMeta data = fw.getFireworkMeta();
-                data.addEffect(FireworkEffect.builder().with(FireworkEffect.Type.BURST).withColor(Color.GREEN).withFade(Color.YELLOW).build());
-                fw.setFireworkMeta(data);
-                plugin.getServer().getScheduler().runTaskLater(plugin, new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        fw.detonate();
-                    }
-                }, 2L);
-                for (int i = 0; i < 10; i++)
-                {
-                    money.add(player.getWorld().dropItemNaturally(player.getLocation().add(0, new Random().nextDouble(), 0), new ItemStack(Material.PAPER)));
-                }
-                plugin.getServer().getScheduler().runTaskLater(plugin, new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        for(Item items : money)
-                        {
-                            items.remove();
+            if (player.getItemInHand() != null && player.getItemInHand().getType() != Material.AIR) {
+                if (player.getItemInHand().getItemMeta().equals(ItemManager.payday.getItemMeta())) {
+                    final Firework fw = (Firework) player.getWorld().spawnEntity(hit.getLocation(), EntityType.FIREWORK);
+                    FireworkMeta data = fw.getFireworkMeta();
+                    data.addEffect(FireworkEffect.builder().with(FireworkEffect.Type.BURST).withColor(Color.GREEN).withFade(Color.YELLOW).build());
+                    fw.setFireworkMeta(data);
+                    plugin.getServer().getScheduler().runTaskLater(plugin, new Runnable() {
+                        @Override
+                        public void run() {
+                            fw.detonate();
                         }
-                        money.clear();
+                    }, 2L);
+                    for (int i = 0; i < 10; i++) {
+                        money.add(player.getWorld().dropItemNaturally(player.getLocation().add(0, new Random().nextDouble(), 0), new ItemStack(Material.PAPER)));
                     }
-                }, 20L);
+                    plugin.getServer().getScheduler().runTaskLater(plugin, new Runnable() {
+                        @Override
+                        public void run() {
+                            for (Item items : money) {
+                                items.remove();
+                            }
+                            money.clear();
+                        }
+                    }, 20L);
+                }
             }
         }
     }

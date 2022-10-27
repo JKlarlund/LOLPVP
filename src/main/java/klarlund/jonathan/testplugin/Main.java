@@ -23,7 +23,7 @@ public final class Main extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
 
-        if (!setupEconomy() ) {
+        if (!setupEconomy()) {
             getLogger().severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
             return;
@@ -31,7 +31,6 @@ public final class Main extends JavaPlugin {
         Bukkit.getLogger().info("Working.");
         ItemManager.init();
         ChestManager.init();
-
 
 
         getServer().getPluginManager().registerEvents(new InvisRing(this), this);
@@ -50,6 +49,8 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PVPChest(), this);
         getServer().getPluginManager().registerEvents(new MagicSperm(this), this);
         getServer().getPluginManager().registerEvents(new SignManager(), this);
+        getServer().getPluginManager().registerEvents(new SnowArmor(this), this);
+
         getCommand("wifebeater").setExecutor(new WeaponCommands());
         getCommand("ejacul8").setExecutor(new WeaponCommands());
         getCommand("prot6boots").setExecutor(new WeaponCommands());
@@ -85,8 +86,7 @@ public final class Main extends JavaPlugin {
         getCommand("prot5ae").setExecutor(new WeaponCommands());
         getCommand("prot6ae").setExecutor(new WeaponCommands());
         getCommand("magicsperm").setExecutor(new WeaponCommands());
-
-
+        getCommand("snowarmor").setExecutor(new WeaponCommands());
 
     }
 

@@ -98,6 +98,17 @@ public class ItemManager {
 
     public static ItemStack magicsperm;
 
+    public static ItemStack snowboots;
+
+    public static ItemStack snowlegs;
+
+    public static ItemStack snowchest;
+
+    public static ItemStack snowhelm;
+
+
+
+
     public static void init() {
         CreateWifeBeater();
         CreateEjacul8();
@@ -142,6 +153,10 @@ public class ItemManager {
         PROTVIAECHEST();
         PROTVIAEHELM();
         MAGICSPERM();
+        SNOWBOOTS();
+        SNOWLEGS();
+        SNOWCHEST();
+        SNOWHELM();
 
     }
 
@@ -948,6 +963,74 @@ public class ItemManager {
         item.setItemMeta(meta);
 
         magicsperm = item;
+    }
+
+    private static void SNOWBOOTS() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_BOOTS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bSnow Armor");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.GRAY + "Snowstorm I");
+        vilore.add(ChatColor.DARK_GRAY + "Wear a full set of Snow Armor for a special effect");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        snowboots = item;
+
+    }
+
+    private static void SNOWLEGS() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_LEGGINGS, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bSnow Armor");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.GRAY + "Snowstorm I");
+        vilore.add(ChatColor.DARK_GRAY + "Wear a full set of Snow Armor for a special effect");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        snowlegs = item;
+
+    }
+
+    private static void SNOWCHEST() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_CHESTPLATE, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bSnow Armor");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.GRAY + "Snowstorm I");
+        vilore.add(ChatColor.DARK_GRAY + "Wear a full set of Snow Armor for a special effect");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        snowchest = item;
+
+    }
+
+    private static void SNOWHELM() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_HELMET, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bSnow Armor");
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
+        List<String> vilore = new ArrayList<String>();
+        vilore.add(ChatColor.GRAY + "Snowstorm I");
+        vilore.add(ChatColor.DARK_GRAY + "Wear a full set of Snow Armor for a special effect");
+        meta.setLore(vilore);
+
+        item.setItemMeta(meta);
+
+        snowhelm = item;
+
     }
 
 

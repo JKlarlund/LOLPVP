@@ -14,18 +14,11 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class PVPChest implements Listener {
 
    PVPChestData ChestData = new PVPChestData();
-
-
-
-
 
     @EventHandler
     public void onInteract(PlayerInteractEvent event){
@@ -139,6 +132,7 @@ public class PVPChest implements Listener {
                         player.getInventory().addItem(ChestData.IVArmor.get(FirstNumber));
                         player.getInventory().addItem(ChestData.IVArmor.get(SecondNumber));
                         player.getInventory().addItem(ChestData.IVArmor.get(Thirdnumber));
+
 
                     }
 

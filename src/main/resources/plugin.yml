@@ -131,3 +131,7 @@ commands:
   snowarmor:
     usage: /snowarmor
     permission: testplugin.snowhelm
+  pvpelite:
+    usage: /pvpelite
+    permission: testplugin.pvpelite
+    aliases: [pvpelitechest, elitechest]

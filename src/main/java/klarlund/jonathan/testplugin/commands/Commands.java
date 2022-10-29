@@ -1,17 +1,13 @@
 package klarlund.jonathan.testplugin.commands;
 
 import klarlund.jonathan.testplugin.MysteryChest.ChestManager;
-import klarlund.jonathan.testplugin.MysteryChest.PVPChest;
 import klarlund.jonathan.testplugin.items.ItemManager;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
-
-public class WeaponCommands implements CommandExecutor {
+public class Commands implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -141,6 +137,10 @@ public class WeaponCommands implements CommandExecutor {
             player.getInventory().addItem(ItemManager.snowlegs);
             player.getInventory().addItem(ItemManager.snowchest);
             player.getInventory().addItem(ItemManager.snowhelm);
+        }
+
+        if (command.getName().equalsIgnoreCase("pvpelite")){
+            player.getInventory().addItem(ChestManager.PVPEliteChest);
         }
 
         return true;

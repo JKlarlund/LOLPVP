@@ -15,8 +15,10 @@ public class ChestManager {
 
     public static ItemStack PVPChest;
 
+    public static ItemStack PVPEliteChest;
+
     public static void init(){
-        CreatePVPChest();
+        CreatePVPChest(); CreatePVPELITEChest();
     }
 
     private static void CreatePVPChest(){
@@ -30,6 +32,21 @@ public class ChestManager {
         item.setItemMeta(meta);
 
         PVPChest = item;
+
+
+    }
+
+    private static void CreatePVPELITEChest(){
+        ItemStack item = new ItemStack(Material.CHEST, 1);
+        ItemMeta meta = item.getItemMeta();
+
+        meta.setDisplayName(ChatColor.RED + "PVP Elite Chest");
+        List<String> lore = new ArrayList<String>();
+        lore.add(ChatColor.GRAY + "Right click to unwrap!");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+
+        PVPEliteChest = item;
 
 
     }

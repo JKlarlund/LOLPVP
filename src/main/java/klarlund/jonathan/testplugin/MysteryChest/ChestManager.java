@@ -17,8 +17,10 @@ public class ChestManager {
 
     public static ItemStack PVPEliteChest;
 
+    public static ItemStack XmasChest;
+
     public static void init(){
-        CreatePVPChest(); CreatePVPELITEChest();
+        CreatePVPChest(); CreatePVPELITEChest(); CreateXMASChest();
     }
 
     private static void CreatePVPChest(){
@@ -47,6 +49,21 @@ public class ChestManager {
         item.setItemMeta(meta);
 
         PVPEliteChest = item;
+
+
+    }
+
+    private static void CreateXMASChest(){
+        ItemStack item = new ItemStack(Material.CHEST, 1);
+        ItemMeta meta = item.getItemMeta();
+
+        meta.setDisplayName(ChatColor.RED + "Christmas Chest");
+        List<String> lore = new ArrayList<String>();
+        lore.add(ChatColor.GRAY + "Right click to unwrap!");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+
+        XmasChest = item;
 
 
     }

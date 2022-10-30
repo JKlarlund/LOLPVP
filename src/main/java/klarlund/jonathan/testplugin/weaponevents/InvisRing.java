@@ -21,7 +21,7 @@ import java.util.UUID;
 public class InvisRing implements Listener {
 
     Main plugin;
-    public final HashMap<UUID, Long> invislist;
+    public static HashMap<UUID, Long> invislist;
     public final HashMap<UUID, Integer> warm;
 
     public InvisRing(Main plugin){

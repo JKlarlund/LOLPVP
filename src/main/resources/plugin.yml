@@ -135,3 +135,18 @@ commands:
     usage: /pvpelite
     permission: testplugin.pvpelite
     aliases: [pvpelitechest, elitechest]
+  snowemp:
+    usage: /snowemp
+    permission: testplugin.snowemp
+    aliases: [semp, snowe]
+  abominablesnowman:
+    usage: /abominablesnowman
+    permission: testplugin.abominablesnowman
+  xmaschest:
+    usage: /xmaschest
+    permission: testplugin.xmaschest
+    aliases: [christmas, christmaschest, xchest]
+  lol:
+    usage: /lol
+  lols:
+    usage: /lol s

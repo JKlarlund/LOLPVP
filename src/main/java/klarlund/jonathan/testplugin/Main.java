@@ -2,8 +2,11 @@ package klarlund.jonathan.testplugin;
 
 import klarlund.jonathan.testplugin.MysteryChest.ChestManager;
 import klarlund.jonathan.testplugin.MysteryChest.PVPChest;
+import klarlund.jonathan.testplugin.MysteryChest.PVPEliteChest;
+import klarlund.jonathan.testplugin.MysteryChest.XmasChest;
 import klarlund.jonathan.testplugin.commands.Kits;
 import klarlund.jonathan.testplugin.commands.Commands;
+import klarlund.jonathan.testplugin.commands.LOLCommand;
 import klarlund.jonathan.testplugin.signs.SignManager;
 import klarlund.jonathan.testplugin.weaponevents.*;
 import klarlund.jonathan.testplugin.items.ItemManager;
@@ -48,6 +51,11 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new MagicSperm(this), this);
         getServer().getPluginManager().registerEvents(new SignManager(), this);
         getServer().getPluginManager().registerEvents(new SnowArmor(this), this);
+        getServer().getPluginManager().registerEvents(new PVPEliteChest(), this);
+        getServer().getPluginManager().registerEvents(new SnowEMP(), this);
+        getServer().getPluginManager().registerEvents(new AbominableSnowman(this), this);
+        getServer().getPluginManager().registerEvents(new XmasChest(), this);
+
 
         getCommand("wifebeater").setExecutor(new Commands());
         getCommand("ejacul8").setExecutor(new Commands());
@@ -86,6 +94,13 @@ public final class Main extends JavaPlugin {
         getCommand("magicsperm").setExecutor(new Commands());
         getCommand("snowarmor").setExecutor(new Commands());
         getCommand("pvpelite").setExecutor(new Commands());
+        getCommand("snowemp").setExecutor(new Commands());
+        getCommand("abominablesnowman").setExecutor(new Commands());
+        getCommand("xmaschest").setExecutor(new Commands());
+        getCommand("lol").setExecutor(new LOLCommand());
+        getCommand("lols").setExecutor(new LOLCommand());
+
+
 
     }
 

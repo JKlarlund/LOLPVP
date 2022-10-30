@@ -143,6 +143,16 @@ public class Commands implements CommandExecutor {
             player.getInventory().addItem(ChestManager.PVPEliteChest);
         }
 
+        if (command.getName().equalsIgnoreCase("snowemp")){
+            player.getInventory().addItem(ItemManager.snowemp);
+        }
+        if (command.getName().equalsIgnoreCase("abominablesnowman")){
+            player.getInventory().addItem(ItemManager.abominablesnowman);
+        }
+        if (command.getName().equalsIgnoreCase("xmaschest")){
+            player.getInventory().addItem(ChestManager.XmasChest);
+        }
+
         return true;
 
     }

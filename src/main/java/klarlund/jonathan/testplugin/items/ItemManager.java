@@ -106,6 +106,10 @@ public class ItemManager {
 
     public static ItemStack snowhelm;
 
+    public static ItemStack snowemp;
+
+    public static ItemStack abominablesnowman;
+
 
 
 
@@ -157,6 +161,8 @@ public class ItemManager {
         SNOWLEGS();
         SNOWCHEST();
         SNOWHELM();
+        SNOWEMP();
+        ABOMINABLESNOWMAN();
 
     }
 
@@ -1030,6 +1036,42 @@ public class ItemManager {
         item.setItemMeta(meta);
 
         snowhelm = item;
+
+    }
+
+    private static void SNOWEMP() {
+
+        ItemStack item = new ItemStack(Material.PAPER, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bSnow Blanket EMP");
+        meta.addEnchant(Enchantment.FIRE_ASPECT, 1, true);
+        List<String> empmeta = new ArrayList<String>();
+        empmeta.add(ChatColor.ITALIC + "" + ChatColor.DARK_PURPLE + "A throwable bomb that disables your enemies' potion effects!");
+        empmeta.add(ChatColor.DARK_GRAY + "Right click to launch.");
+        meta.setLore(empmeta);
+
+        item.setItemMeta(meta);
+
+        snowemp = item;
+
+    }
+
+    private static void ABOMINABLESNOWMAN() {
+
+        ItemStack item = new ItemStack(Material.DIAMOND_SWORD, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§bAbominable Snowman");
+        meta.addEnchant(Enchantment.LOOT_BONUS_MOBS, 5, true);
+        meta.addEnchant(Enchantment.DAMAGE_UNDEAD, 10, true);
+        meta.addEnchant(Enchantment.DAMAGE_ALL, 10, true);
+        List<String> empmeta = new ArrayList<String>();
+        empmeta.add(ChatColor.GRAY + "Snowstorm I");
+        empmeta.add(ChatColor.DARK_GRAY + "This sword was found deep in a cave in Antarctica. Shift to charge!");
+        meta.setLore(empmeta);
+
+        item.setItemMeta(meta);
+
+        abominablesnowman = item;
 
     }
 

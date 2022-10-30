@@ -25,6 +25,9 @@ public class PVPChestData {
 
     public List<ItemStack> Projectiles;
 
+    public List<ItemStack> xmasballer;
+
+
 
     int index;
 
@@ -112,6 +115,11 @@ public class PVPChestData {
         this.Projectiles.add(ItemManager.emp);
         //...
 
+        this.xmasballer = new ArrayList<>();
+        this.xmasballer.add(ItemManager.iceblade);
+        this.xmasballer.add(ItemManager.abominablesnowman);
+        this.xmasballer.add(ItemManager.angelwings);
+
 
         //...
 
@@ -148,6 +156,8 @@ public class PVPChestData {
     public List<ItemStack> getProjectileData(){
         return Projectiles;
     }
+
+    public List<ItemStack> getXmasData() {return xmasballer;}
 
 }
 

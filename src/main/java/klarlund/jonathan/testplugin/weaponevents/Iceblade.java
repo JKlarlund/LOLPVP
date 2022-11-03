@@ -45,6 +45,7 @@ public class Iceblade implements Listener {
     public void onMove(PlayerMoveEvent event)
     {
         Player player = event.getPlayer();
+        
         if(BarAPI.hasBar(player)
                 && BarAPI.getMessage(player).equals("Ender Dragon"))
         {

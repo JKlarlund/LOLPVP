@@ -88,6 +88,11 @@
             <url>https://jitpack.io</url>
         </repository>
 
+        <repository>
+            <id>sk89q-repo</id>
+            <url>http://maven.sk89q.com/repo</url>
+        </repository>
+
 
     </repositories>
 
@@ -108,6 +113,27 @@
             <scope>provided</scope>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>com.sk89q.worldguard</groupId>-->
+<!--            <artifactId>worldguard-legacy</artifactId>-->
+<!--            <version>6.2</version>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.sample</groupId>
+            <artifactId>sample</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/worldguard-6.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sample</groupId>
+            <artifactId>sample2</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/worldedit-bukkit-6.1.9.jar</systemPath>
+        </dependency>
 
         <dependency>
             <groupId>org.bukkit</groupId>

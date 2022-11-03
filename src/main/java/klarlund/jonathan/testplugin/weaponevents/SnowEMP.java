@@ -38,8 +38,12 @@ public class SnowEMP implements Listener {
             if (player.getItemInHand().getItemMeta().equals(ItemManager.snowemp.getItemMeta())) {
                 if (event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
                     event.setCancelled(true);
-                    if (!player.getGameMode().equals(GameMode.CREATIVE))
+                    if (!player.getGameMode().equals(GameMode.CREATIVE) && player.getItemInHand().getAmount() == 1) {
                         player.setItemInHand(null);
+                    }
+                    else if (!player.getGameMode().equals(GameMode.CREATIVE) && player.getItemInHand().getAmount()>1){
+                        player.getInventory().getItemInHand().setAmount(player.getItemInHand().getAmount() - 1);
+                    }
                     ItemProjectile itemProjectile = new ItemProjectile("EMP", (LivingEntity) player, ItemManager.snowemp, 0.4F);
                     itemProjectile.addTypedRunnable(new TypedRunnable<ItemProjectile>() {
                         public void run(ItemProjectile o) {

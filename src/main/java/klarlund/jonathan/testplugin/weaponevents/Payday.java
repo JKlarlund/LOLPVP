@@ -1,5 +1,6 @@
 package klarlund.jonathan.testplugin.weaponevents;
 
+import com.sk89q.worldguard.protection.flags.DefaultFlag;
 import klarlund.jonathan.testplugin.Main;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import org.bukkit.*;

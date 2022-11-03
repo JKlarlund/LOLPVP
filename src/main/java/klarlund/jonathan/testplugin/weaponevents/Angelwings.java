@@ -99,7 +99,7 @@ public class Angelwings implements Listener {
             if (e.getEntity() instanceof Player)
             {
                 Player p = (Player) e.getEntity();
-                if (p.getInventory().getChestplate().getItemMeta().equals(ItemManager.angelwings.getItemMeta()))
+                if (p.getInventory().getChestplate() != null && p.getInventory().getChestplate().getItemMeta().equals(ItemManager.angelwings.getItemMeta()))
                 {
                     if (p.getLocation().subtract(new Vector(0,1,0)).getBlock().getType() == Material.AIR)
                     {

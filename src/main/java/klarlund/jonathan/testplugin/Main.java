@@ -1,5 +1,10 @@
 package klarlund.jonathan.testplugin;
 
+import com.sk89q.worldguard.LocalPlayer;
+import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
+import com.sk89q.worldguard.protection.ApplicableRegionSet;
+import com.sk89q.worldguard.protection.flags.DefaultFlag;
+import com.sk89q.worldguard.protection.managers.RegionManager;
 import klarlund.jonathan.testplugin.MysteryChest.ChestManager;
 import klarlund.jonathan.testplugin.MysteryChest.PVPChest;
 import klarlund.jonathan.testplugin.MysteryChest.PVPEliteChest;
@@ -12,14 +17,19 @@ import klarlund.jonathan.testplugin.weaponevents.*;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.World;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Objects;
 
 public final class Main extends JavaPlugin {
 
     private static Economy econ = null;
 
-    
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -32,7 +42,6 @@ public final class Main extends JavaPlugin {
         Bukkit.getLogger().info("Working.");
         ItemManager.init();
         ChestManager.init();
-
 
         getServer().getPluginManager().registerEvents(new InvisRing(this), this);
         getServer().getPluginManager().registerEvents(new Wifebeater(), this);
@@ -101,7 +110,25 @@ public final class Main extends JavaPlugin {
         getCommand("lols").setExecutor(new LOLCommand());
 
 
+    }
 
+    private static WorldGuardPlugin getWorldGuard() {
+        final Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("WorldGuard");
+        if (plugin == null || !(plugin instanceof WorldGuardPlugin)) {
+            return null;
+        }
+
+        return (WorldGuardPlugin) plugin;
+    }
+
+    public static boolean isPlayerInPVP(Player player){
+        final RegionManager regionManager = getWorldGuard().getRegionManager(player.getLocation().getWorld());
+        final ApplicableRegionSet set = regionManager.getApplicableRegions(player.getLocation());
+        final LocalPlayer localPlayer = getWorldGuard().wrapPlayer(player);
+        if (!set.testState(localPlayer, DefaultFlag.PVP)){
+            player.sendMessage(ChatColor.RED + "Sorry, you can't use that here!");
+        }
+        return set.testState(localPlayer, DefaultFlag.PVP);
     }
 
     //This is vault.
@@ -120,7 +147,6 @@ public final class Main extends JavaPlugin {
     public static Economy getEconomy() {
         return econ;
     }
-
 
 
 //Disable logic.

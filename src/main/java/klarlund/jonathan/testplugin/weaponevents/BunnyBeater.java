@@ -1,5 +1,6 @@
 package klarlund.jonathan.testplugin.weaponevents;
 
+import klarlund.jonathan.testplugin.Main;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -16,17 +17,15 @@ public class BunnyBeater implements Listener {
     public static void BunnyLauncher(PlayerInteractEntityEvent event) {
         Player player = event.getPlayer();
         if (event.getRightClicked() instanceof LivingEntity) {
-            if (event.getPlayer().getItemInHand() != null && player.getItemInHand().getType() != Material.AIR) {
-                if (event.getPlayer().getItemInHand().getItemMeta().equals(ItemManager.bunnybeater.getItemMeta())) {
-                    LivingEntity entity = (LivingEntity) event.getRightClicked();
-                    entity.setVelocity(new Vector(0, .65, 0));
-                    entity.getWorld().playSound(entity.getLocation(), Sound.ENDERDRAGON_WINGS, 1F, 1F);
+            if (Main.isPlayerInPVP(player)) {
+                if (event.getPlayer().getItemInHand() != null && player.getItemInHand().getType() != Material.AIR) {
+                    if (event.getPlayer().getItemInHand().getItemMeta().equals(ItemManager.bunnybeater.getItemMeta())) {
+                        LivingEntity entity = (LivingEntity) event.getRightClicked();
+                        entity.setVelocity(new Vector(0, .65, 0));
+                        entity.getWorld().playSound(entity.getLocation(), Sound.ENDERDRAGON_WINGS, 1F, 1F);
+                    }
                 }
             }
         }
-
-
     }
-
-
 }

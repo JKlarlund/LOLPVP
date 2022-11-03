@@ -52,6 +52,9 @@ public class Commands implements CommandExecutor {
         if (command.getName().equalsIgnoreCase("babymaker")) {
             player.getInventory().addItem(ItemManager.babymaker);
         }
+        if (command.getName().equalsIgnoreCase("battleaxe")) {
+            player.getInventory().addItem(ItemManager.battleaxe);
+        }
         if (command.getName().equalsIgnoreCase("bunnybeater")) {
             player.getInventory().addItem(ItemManager.bunnybeater);
         }

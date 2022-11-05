@@ -147,6 +147,9 @@ commands:
     usage: /xmaschest
     permission: testplugin.xmaschest
     aliases: [christmas, christmaschest, xchest]
+  moneytoken:
+    usage: /moneytoken
+    permission: testplugin.moneytoken
   lol:
     usage: /lol
   lols:

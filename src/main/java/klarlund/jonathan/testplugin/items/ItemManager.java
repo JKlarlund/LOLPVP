@@ -110,6 +110,8 @@ public class ItemManager {
 
     public static ItemStack abominablesnowman;
 
+    public static ItemStack moneytoken;
+
 
 
 
@@ -163,6 +165,7 @@ public class ItemManager {
         SNOWHELM();
         SNOWEMP();
         ABOMINABLESNOWMAN();
+        MONEYTOKEN();
 
     }
 
@@ -1072,6 +1075,23 @@ public class ItemManager {
         item.setItemMeta(meta);
 
         abominablesnowman = item;
+
+    }
+
+    private static void MONEYTOKEN() {
+
+        ItemStack item = new ItemStack(Material.EMERALD, 1);
+        ItemMeta meta = item.getItemMeta();
+        meta.setDisplayName("§6Money Token");
+        List<String> empmeta = new ArrayList<String>();
+        empmeta.add(ChatColor.GRAY + "Buffett I");
+        empmeta.add(ChatColor.DARK_GRAY + "Wow! Look at you! Right click to use.");
+        meta.setLore(empmeta);
+
+        item.setItemMeta(meta);
+
+        moneytoken = item;
+
 
     }
 

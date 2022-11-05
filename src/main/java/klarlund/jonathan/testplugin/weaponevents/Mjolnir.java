@@ -22,6 +22,7 @@ public class Mjolnir implements Listener {
         this.cooldown = new HashMap<>();
     }
 
+
     @EventHandler
     public void onRightClick(PlayerInteractEntityEvent event) {
         if (event.getPlayer() instanceof Player) {

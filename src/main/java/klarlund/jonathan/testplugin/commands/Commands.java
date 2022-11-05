@@ -97,6 +97,9 @@ public class Commands implements CommandExecutor {
         if (command.getName().equalsIgnoreCase("magicsperm")) {
             player.getInventory().addItem(ItemManager.magicsperm);
         }
+        if (command.getName().equalsIgnoreCase("moneytoken")) {
+            player.getInventory().addItem(ItemManager.moneytoken);
+        }
 
         if (command.getName().equalsIgnoreCase("prot5")){
             player.getInventory().addItem(ItemManager.prot5boots);

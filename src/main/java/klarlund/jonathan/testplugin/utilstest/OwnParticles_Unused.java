@@ -27,7 +27,7 @@ public class OwnParticles_Unused {
         return players;
     }
 
-    public void spawnParticleFIREWORKS(Location loc, List<Player> players){
+    public static void spawnParticleFIREWORKS(Location loc, List<Player> players){
 
         //Assuming v6 (which is power) is one for now. I have no idea... Have to find video of EMP being fired.
         //Though actually quite likely it is =1, in that assuming it tries to get the ParticleEffect function.
@@ -47,8 +47,17 @@ public class OwnParticles_Unused {
 
     }
 
-    public void spawnParticleSnow(Location loc, List<Player> players){
+    public static void spawnParticleSnow(Location loc, List<Player> players){
         PacketPlayOutWorldParticles packetparticle = new PacketPlayOutWorldParticles(EnumParticle.SNOW_SHOVEL, true, (float) loc.getX(), (float) loc.getY(), (float) loc.getZ(),
+                0 ,0, 0, 1, 1);
+
+        for (Player p: players){
+            ((CraftPlayer) p).getHandle().playerConnection.sendPacket(packetparticle);
+        }
+    }
+
+    public static void spawnParticleMoney(Location loc, List<Player> players){
+        PacketPlayOutWorldParticles packetparticle = new PacketPlayOutWorldParticles(EnumParticle.SLIME, true, (float) loc.getX(), (float) loc.getY(), (float) loc.getZ(),
                 0 ,0, 0, 1, 1);
 
         for (Player p: players){

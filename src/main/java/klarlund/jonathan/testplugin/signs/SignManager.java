@@ -1,4 +1,4 @@
-package klarlund.jonathan.testplugin.signs;
+package klarlund.jonathan.testplugin.Signs;
 
 import klarlund.jonathan.testplugin.Main;
 import klarlund.jonathan.testplugin.MysteryChest.ChestManager;
@@ -64,7 +64,7 @@ public class SignManager implements Listener {
 
                     if (Main.getEconomy().getBalance(player) >= moneyDouble){
                         Main.getEconomy().withdrawPlayer(player, moneyDouble);
-                        player.sendMessage(ChatColor.GRAY + "You have purchased an " + ChatColor.AQUA + ChatColor.BOLD + sign.getLine(1));
+                        player.sendMessage(ChatColor.GRAY + "You have purchased a " + ChatColor.AQUA + ChatColor.BOLD + sign.getLine(1));
 
                     }
 

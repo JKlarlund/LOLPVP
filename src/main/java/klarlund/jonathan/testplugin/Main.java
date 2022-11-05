@@ -1,5 +1,7 @@
 package klarlund.jonathan.testplugin;
 
+import com.earth2me.essentials.Essentials;
+import com.earth2me.essentials.commands.EssentialsCommand;
 import com.sk89q.worldguard.LocalPlayer;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
@@ -15,6 +17,7 @@ import klarlund.jonathan.testplugin.commands.LOLCommand;
 import klarlund.jonathan.testplugin.signs.SignManager;
 import klarlund.jonathan.testplugin.weaponevents.*;
 import klarlund.jonathan.testplugin.items.ItemManager;
+import net.ess3.api.IUser;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -64,6 +67,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SnowEMP(), this);
         getServer().getPluginManager().registerEvents(new AbominableSnowman(this), this);
         getServer().getPluginManager().registerEvents(new XmasChest(), this);
+        getServer().getPluginManager().registerEvents(new Moneytoken(), this);
 
 
         getCommand("wifebeater").setExecutor(new Commands());
@@ -108,8 +112,18 @@ public final class Main extends JavaPlugin {
         getCommand("xmaschest").setExecutor(new Commands());
         getCommand("lol").setExecutor(new LOLCommand());
         getCommand("lols").setExecutor(new LOLCommand());
+        getCommand("moneytoken").setExecutor(new Commands());
 
 
+
+    }
+
+    private static Essentials getess(){
+        final Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("Essentials");
+        if (plugin==null){
+            return null;
+        }
+        return (Essentials) plugin;
     }
 
     private static WorldGuardPlugin getWorldGuard() {
@@ -149,6 +163,7 @@ public final class Main extends JavaPlugin {
     }
 
 
+
 //Disable logic.
     @Override
     public void onDisable() {
@@ -157,5 +172,7 @@ public final class Main extends JavaPlugin {
 
         }
 }
+
+
 
 

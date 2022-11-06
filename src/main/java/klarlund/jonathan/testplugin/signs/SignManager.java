@@ -154,6 +154,12 @@ public class SignManager implements Listener {
                     if (itemString.equalsIgnoreCase("PVP CHEST")) {
                         player.getInventory().addItem(ChestManager.PVPChest);
                     }
+
+                    if (itemString.equalsIgnoreCase("Money Token")){
+                        player.getInventory().addItem(ItemManager.moneytoken);
+
+                    }
+
                 }
             }
         }

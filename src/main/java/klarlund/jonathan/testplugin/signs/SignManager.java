@@ -16,8 +16,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -41,7 +43,7 @@ public class SignManager implements Listener {
     }
 
     @EventHandler
-    public void onSignInteract(PlayerInteractEvent event) {
+    public void onSignInteract(PlayerInteractEvent event) throws NoSuchFieldException, IllegalAccessException {
 
         if (event.getAction() != Action.RIGHT_CLICK_BLOCK) {
             return;
@@ -68,7 +70,22 @@ public class SignManager implements Listener {
 
                     }
 
+
                     String itemString = sign.getLine(1);
+
+                    /*
+                    Signs using reflection. Not used for now!
+                     */
+//                    String itemString2 = itemString.toLowerCase();
+//
+//                    Field itemfield = ItemManager.class.getDeclaredField(itemString2);
+                    /*
+                    .get(null) works because declared fields all are static!
+                     */
+//                    ItemStack item = (ItemStack) itemfield.get(null);
+//                    player.getInventory().addItem(item);
+
+
 
                     if (itemString.equalsIgnoreCase("Ejacul8")) {
                         player.getInventory().addItem(ItemManager.ejacul8);

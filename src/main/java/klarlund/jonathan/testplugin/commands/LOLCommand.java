@@ -3,8 +3,10 @@ package klarlund.jonathan.testplugin.commands;
 import klarlund.jonathan.testplugin.Main;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import net.milkbowl.vault.chat.Chat;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -238,9 +240,9 @@ public class LOLCommand implements CommandExecutor {
                 if (balleritem.getItemMeta().equals(ItemManager.prot4boots.getItemMeta()) || balleritem.getItemMeta().equals(ItemManager.prot4legs.getItemMeta())
                         || balleritem.getItemMeta().equals(ItemManager.prot4chest.getItemMeta()) || balleritem.getItemMeta().equals(ItemManager.prot4helm.getItemMeta())) {
                     player.getInventory().setItemInHand(new ItemStack(Material.AIR));
-                    Main.getEconomy().depositPlayer(player, 375000);
+                    Main.getEconomy().depositPlayer(player, 125000);
                     player.sendMessage(ChatColor.GRAY + "You have sold a " + ItemManager.prot4boots.getItemMeta().getDisplayName() + ChatColor.GRAY + " for " + "$"
-                            + ChatColor.AQUA + "375,000");
+                            + ChatColor.AQUA + "125,000");
 
                 }
 
@@ -413,7 +415,7 @@ public class LOLCommand implements CommandExecutor {
                 if (balleritem.getItemMeta().equals(ItemManager.prot4boots.getItemMeta()) || balleritem.getItemMeta().equals(ItemManager.prot4legs.getItemMeta())
                         || balleritem.getItemMeta().equals(ItemManager.prot4chest.getItemMeta()) || balleritem.getItemMeta().equals(ItemManager.prot4helm.getItemMeta())) {
                     player.sendMessage(ChatColor.GRAY + "The price for a " + ItemManager.prot4boots.getItemMeta().getDisplayName() +
-                            ChatColor.GRAY + " is " + "$" + ChatColor.AQUA + "375,000");
+                            ChatColor.GRAY + " is " + "$" + ChatColor.AQUA + "125,000");
 
                 }
 
@@ -439,23 +441,54 @@ public class LOLCommand implements CommandExecutor {
 
                 if (args[1].length() > 2 && args[1].length() < 5) {
 
-                    boolean killach = false;
 
-                    Main.getChat().setPlayerPrefix(player, "&8[" + "&4" + args[1].toString() + "&8]");
-                    player.sendMessage(ChatColor.RED + "Tag set!");
+                    /*
+                    This should set tag in all worlds (end is not available)
+                     */
+                    if (Main.getPerm().playerInGroup(player, "topdonator")){
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("world_nether"), player.getDisplayName(), "&8[" + "&a" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("Plots"), player.getDisplayName(), "&8[" + "&a" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("world"), player.getDisplayName(), "&8[" + "&a" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(player, "&8[" + "&a" + args[1].toString() + "&8]");
+
+                    }
+                    else if (Main.getPerm().playerHas(player, "tag.black")) {
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("world_nether"), player.getDisplayName(), "&8[" + "&0" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("Plots"), player.getDisplayName(), "&8[" + "&0" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("world"), player.getDisplayName(), "&8[" + "&0" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(player, "&8[" + "&0" + args[1].toString() + "&8]");
+                    }
                     /*
                     We could make a permission group containing fx. killach so then
                      */
-                    for (String group: Main.getChat().getPlayerGroups(player)){
-                        if (group.equals("Killach")){
-                            return killach = true;
-
-                        }
-                        else{break;}
+                    else if (Main.getPerm().playerHas(player, "tag.money")){
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("world_nether"), player.getDisplayName(), "&8[" + "&9" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("Plots"), player.getDisplayName(), "&8[" + "&9" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("world"), player.getDisplayName(), "&8[" + "&9" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(player, "&8[" + "&9" + args[1].toString() + "&8]");
                     }
-                    if (killach){
 
+                    else if (Main.getPerm().playerHas(player, "tag.magic")){
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("world_nether"), player.getDisplayName(), "&8[" + "&k" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("Plots"), player.getDisplayName(), "&8[" + "&k" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("world"), player.getDisplayName(), "&8[" + "&k" + args[1].toString() + "&8]");
+
+                        Main.getChat().setPlayerPrefix(player, "&8[" + "&k" + args[1].toString() + "&8]");
                     }
+
+                    else if (Main.getPerm().playerInGroup(player, "VIP") || Main.getPerm().playerInGroup(player, "VIP+")
+                    || Main.getPerm().playerInGroup(player, "THAD")){
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("world_nether"), player.getDisplayName(), "&8[" + "&4" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("Plots"), player.getDisplayName(), "&8[" + "&4" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(Bukkit.getWorld("world"), player.getDisplayName(), "&8[" + "&4" + args[1].toString() + "&8]");
+                        Main.getChat().setPlayerPrefix(player, "&8[" + "&4" + args[1].toString() + "&8]");
+                    } else {
+                        player.sendMessage(ChatColor.RED + "You do not have permission to change tag!");
+                        return true;
+                    }
+
+                    player.sendMessage(ChatColor.RED + "Tag set!");
+
                 }
 
 

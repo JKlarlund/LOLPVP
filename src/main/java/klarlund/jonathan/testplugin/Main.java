@@ -45,6 +45,7 @@ public final class Main extends JavaPlugin {
         // Plugin startup logic
 
         setupChat();
+        setupPermissions();
 
         if (!setupEconomy()) {
             getLogger().severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));

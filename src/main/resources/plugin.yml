@@ -1,7 +1,7 @@
 name: Testplugin
 version: '${project.version}'
 main: klarlund.jonathan.testplugin.Main
-depend: [WorldGuard]
+depend: [WorldGuard, PermissionsEx, WorldEdit]
 api-version: 1.18
 commands:
   pluskvamperfektum:

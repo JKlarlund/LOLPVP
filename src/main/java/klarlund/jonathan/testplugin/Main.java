@@ -18,7 +18,9 @@ import klarlund.jonathan.testplugin.commands.LOLCommand;
 import klarlund.jonathan.testplugin.weaponevents.*;
 import klarlund.jonathan.testplugin.items.ItemManager;
 import net.ess3.api.IUser;
+import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
@@ -32,10 +34,17 @@ import java.util.Objects;
 public final class Main extends JavaPlugin {
 
     private static Economy econ = null;
+    public static Permission permission = null;
+
+    public static Chat chat = null;
+
+
 
     @Override
     public void onEnable() {
         // Plugin startup logic
+
+        setupChat();
 
         if (!setupEconomy()) {
             getLogger().severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
@@ -161,6 +170,24 @@ public final class Main extends JavaPlugin {
     public static Economy getEconomy() {
         return econ;
     }
+
+    private boolean setupPermissions()
+    {
+        RegisteredServiceProvider<Permission> permissionProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.permission.Permission.class);
+        if (permissionProvider != null) {
+            permission = permissionProvider.getProvider();
+        }
+        return (permission != null);
+    }
+
+    public static Permission getPerm(){return permission;}
+
+    private boolean setupChat() {
+        RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
+        chat = rsp.getProvider();
+        return chat != null;
+    }
+    public static Chat getChat(){return chat;}
 
 
 

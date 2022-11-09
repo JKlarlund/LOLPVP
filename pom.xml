@@ -93,6 +93,12 @@
             <url>http://maven.sk89q.com/repo</url>
         </repository>
 
+        <repository>
+            <id>pex-repo</id>
+            <url>https://repo.glaremasters.me/repository/permissionsex/</url>
+        </repository>
+
+
 
     </repositories>
 
@@ -133,6 +139,14 @@
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/resources/worldedit-bukkit-6.1.9.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sample</groupId>
+            <artifactId>sample3</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/PermissionsEx-1.23.4.jar</systemPath>
         </dependency>
 
         <dependency>

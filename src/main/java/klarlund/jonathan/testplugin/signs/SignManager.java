@@ -60,14 +60,14 @@ public class SignManager implements Listener {
                     Double moneyDouble = Double.parseDouble(moneyString3);
 
                     if(Main.getEconomy().getBalance(player) < moneyDouble) {
-                        player.sendMessage(ChatColor.RED + "Not enough funds!");
+                        player.sendMessage(ChatColor.RED + "Insufficient funds!");
                         return;
                     }
 
                     if (Main.getEconomy().getBalance(player) >= moneyDouble){
                         Main.getEconomy().withdrawPlayer(player, moneyDouble);
-                        player.sendMessage(ChatColor.GRAY + "You have purchased a " + ChatColor.AQUA + ChatColor.BOLD + sign.getLine(1));
-
+                        player.sendMessage(ChatColor.GRAY + "You have purchased a " + ChatColor.AQUA + ChatColor.BOLD + sign.getLine(1)
+                        + ChatColor.GRAY + " for " + ChatColor.AQUA + ChatColor.BOLD + moneyString);
                     }
 
 
@@ -175,6 +175,20 @@ public class SignManager implements Listener {
                     if (itemString.equalsIgnoreCase("Money Token")){
                         player.getInventory().addItem(ItemManager.moneytoken);
 
+                    }
+                    if (itemString.equalsIgnoreCase("Repair")){
+                        Main.getPerm().playerAdd(player, "essentials.repair");
+                        Main.getPerm().playerAdd(player, "essentials.repair.all");
+                        player.sendMessage(ChatColor.GRAY + "" + ChatColor.BOLD + "You now have access to /repair");
+
+                    }
+                    if (itemString.equalsIgnoreCase("Ironman")){
+                        Main.getPerm().playerAdd(player, "testplugin.ironman");
+                        player.sendMessage(ChatColor.GRAY + "" + ChatColor.BOLD + "You now have access to /ironman");
+                    }
+                    if (itemString.equalsIgnoreCase("Regen")){
+                        Main.getPerm().playerAdd(player, "testplugin.regen");
+                        player.sendMessage(ChatColor.GRAY + "" + ChatColor.BOLD + "You now have access to /regen");
                     }
 
                 }

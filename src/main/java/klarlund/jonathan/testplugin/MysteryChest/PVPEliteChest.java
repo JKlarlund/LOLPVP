@@ -10,6 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.material.Wool;
 
 import java.util.List;
 import java.util.Random;
@@ -171,6 +172,7 @@ public class PVPEliteChest implements Listener {
                     if(BowChance<=25){
                         player.getInventory().addItem(ChestData.Projectiles.get(NumberGenerator.nextInt(ChestData.Projectiles.size())));
                     } else {}
+
 
 
 

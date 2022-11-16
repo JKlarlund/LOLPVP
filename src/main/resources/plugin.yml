@@ -1,7 +1,7 @@
 name: Testplugin
 version: '${project.version}'
 main: klarlund.jonathan.testplugin.Main
-depend: [WorldGuard, PermissionsEx, WorldEdit]
+depend: [WorldGuard, PermissionsEx, WorldEdit, BarAPI]
 api-version: 1.18
 commands:
   pluskvamperfektum:
@@ -154,3 +154,9 @@ commands:
     usage: /lol
   lols:
     usage: /lol s
+  thadchest:
+    usage: /thadchest
+    permission: testplugin.thadchest
+  designerchest:
+    usage: /designerchest
+    permission: testplugin.designerchest

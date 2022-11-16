@@ -38,8 +38,16 @@ public class XmasChest implements Listener {
 
                     int empluck = Numbergenerator.nextInt(100);
 
-                    if (XmasLuck < 25){
-                        player.getInventory().addItem(XmasData.BallerWeapon.get(BallerRandom));
+                    if (XmasLuck < 5){
+                        player.getInventory().addItem(ItemManager.payday);
+                    }
+
+                    if (XmasLuck < 15 && XmasLuck >= 5){
+                        player.getInventory().addItem(ChestManager.PVPEliteChest);
+                    }
+
+                    if (XmasLuck >= 15 && XmasLuck < 25){
+                        player.getInventory().addItem(ChestManager.PVPChest);
                     }
 
                     if (XmasLuck >= 25 && XmasLuck <= 85) {
@@ -83,7 +91,7 @@ public class XmasChest implements Listener {
 
                     for (Player textrecipient : Bukkit.getOnlinePlayers()) {
                         textrecipient.sendMessage(ChatColor.AQUA + player.getName() + " " + ChatColor.RED + "just opened a Christmas Chest!");
-                        textrecipient.sendMessage(ChatColor.YELLOW + "Get YOURS now at " + ChatColor.AQUA + "Link!");
+                        textrecipient.sendMessage(ChatColor.YELLOW + "Get YOURS now at " + ChatColor.AQUA + "SHOP.LOLPVP.ORG!");
                     }
 
 

@@ -119,6 +119,7 @@ public class PVPChestData {
         this.xmasballer.add(ItemManager.iceblade);
         this.xmasballer.add(ItemManager.abominablesnowman);
         this.xmasballer.add(ItemManager.angelwings);
+        this.xmasballer.add(ItemManager.invisring);
 
 
         //...

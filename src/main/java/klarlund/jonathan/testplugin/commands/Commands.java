@@ -180,6 +180,12 @@ public class Commands implements CommandExecutor {
             if (command.getName().equalsIgnoreCase("xmaschest")) {
                 player.getInventory().addItem(ChestManager.XmasChest);
             }
+            if (command.getName().equalsIgnoreCase("thadchest")) {
+                player.getInventory().addItem(ChestManager.ThadChest);
+            }
+            if (command.getName().equalsIgnoreCase("designerchest")) {
+                player.getInventory().addItem(ChestManager.DesignerChest);
+            }
         }
 
         return true;

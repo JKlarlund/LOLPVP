@@ -30,7 +30,7 @@ public class MagicSperm implements Listener {
             Player player = (Player) event.getEntity();
             if ((event.getDamager() instanceof Player)) {
                 final Player target = (Player) event.getDamager();
-                if (target.getInventory().getItemInHand() != null && player.getItemInHand().getType() != Material.AIR) {
+                if (target.getInventory().getItemInHand() != null && target.getItemInHand().getType() != Material.AIR) {
                     if (target.getInventory().getItemInHand().getItemMeta().equals(ItemManager.magicsperm.getItemMeta())) {
                         int i = 2;
                         if (!this.in.containsKey(target.getName())) {

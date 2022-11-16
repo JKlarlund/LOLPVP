@@ -7,10 +7,7 @@ import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.DefaultFlag;
 import com.sk89q.worldguard.protection.managers.RegionManager;
-import klarlund.jonathan.testplugin.MysteryChest.ChestManager;
-import klarlund.jonathan.testplugin.MysteryChest.PVPChest;
-import klarlund.jonathan.testplugin.MysteryChest.PVPEliteChest;
-import klarlund.jonathan.testplugin.MysteryChest.XmasChest;
+import klarlund.jonathan.testplugin.MysteryChest.*;
 import klarlund.jonathan.testplugin.Signs.SignManager;
 import klarlund.jonathan.testplugin.commands.Kits;
 import klarlund.jonathan.testplugin.commands.Commands;
@@ -82,6 +79,8 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AbominableSnowman(this), this);
         getServer().getPluginManager().registerEvents(new XmasChest(), this);
         getServer().getPluginManager().registerEvents(new Moneytoken(), this);
+        getServer().getPluginManager().registerEvents(new ThadChest(), this);
+        getServer().getPluginManager().registerEvents(new DesignerChest(), this);
 
         getCommand("wifebeater").setExecutor(new Commands());
         getCommand("ejacul8").setExecutor(new Commands());
@@ -126,6 +125,8 @@ public final class Main extends JavaPlugin {
         getCommand("lol").setExecutor(new LOLCommand());
         getCommand("lols").setExecutor(new LOLCommand());
         getCommand("moneytoken").setExecutor(new Commands());
+        getCommand("thadchest").setExecutor((new Commands()));
+        getCommand("designerchest").setExecutor((new Commands()));
 
 
     }

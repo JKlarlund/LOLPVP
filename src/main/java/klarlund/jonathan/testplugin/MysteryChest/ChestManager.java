@@ -19,8 +19,12 @@ public class ChestManager {
 
     public static ItemStack XmasChest;
 
+    public static ItemStack ThadChest;
+
+    public static ItemStack DesignerChest;
+
     public static void init(){
-        CreatePVPChest(); CreatePVPELITEChest(); CreateXMASChest();
+        CreatePVPChest(); CreatePVPELITEChest(); CreateXMASChest(); CreateTHADChest(); CreateDESIGNERChest();
     }
 
     private static void CreatePVPChest(){
@@ -68,6 +72,35 @@ public class ChestManager {
 
     }
 
+    private static void CreateTHADChest(){
+        ItemStack item = new ItemStack(Material.CHEST, 1);
+        ItemMeta meta = item.getItemMeta();
+
+        meta.setDisplayName(ChatColor.RED + "THAD Chest");
+        List<String> lore = new ArrayList<String>();
+        lore.add(ChatColor.GRAY + "Right click to unwrap!");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+
+        ThadChest = item;
+
+
+    }
+
+    private static void CreateDESIGNERChest(){
+        ItemStack item = new ItemStack(Material.CHEST, 1);
+        ItemMeta meta = item.getItemMeta();
+
+        meta.setDisplayName(ChatColor.RED + "Designer Chest");
+        List<String> lore = new ArrayList<String>();
+        lore.add(ChatColor.GRAY + "Right click to unwrap!");
+        meta.setLore(lore);
+        item.setItemMeta(meta);
+
+        DesignerChest = item;
+
+
+    }
 
 }
 

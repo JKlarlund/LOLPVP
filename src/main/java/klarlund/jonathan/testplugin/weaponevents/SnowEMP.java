@@ -44,7 +44,7 @@ public class SnowEMP implements Listener {
                     else if (!player.getGameMode().equals(GameMode.CREATIVE) && player.getItemInHand().getAmount()>1){
                         player.getInventory().getItemInHand().setAmount(player.getItemInHand().getAmount() - 1);
                     }
-                    ItemProjectile itemProjectile = new ItemProjectile("EMP", (LivingEntity) player, ItemManager.snowemp, 0.4F);
+                    ItemProjectile itemProjectile = new ItemProjectile("SNOWEMP", (LivingEntity) player, ItemManager.snowemp, 0.4F);
                     itemProjectile.addTypedRunnable(new TypedRunnable<ItemProjectile>() {
                         public void run(ItemProjectile o) {
 
@@ -67,7 +67,7 @@ public class SnowEMP implements Listener {
     @EventHandler
     public void onHit(CustomProjectileHitEvent event) {
         Player player = (Player) event.getProjectile().getShooter();
-        if (event.getProjectile().getProjectileName().equalsIgnoreCase("EMP"))
+        if (event.getProjectile().getProjectileName().equalsIgnoreCase("SNOWEMP"))
             if (event.getHitType().equals(CustomProjectileHitEvent.HitType.BLOCK) || event.getHitType().equals(CustomProjectileHitEvent.HitType.ENTITY))
                 if (event.getProjectile().getShooter() != event.getHitEntity()) {
 

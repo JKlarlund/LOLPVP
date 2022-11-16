@@ -198,7 +198,7 @@ public class PVPEliteChest implements Listener {
 
                     for (Player textrecipient: Bukkit.getOnlinePlayers()){
                         textrecipient.sendMessage(ChatColor.AQUA + player.getName() + " " + ChatColor.RED + "just opened an Elite PVP Chest!");
-                        textrecipient.sendMessage(ChatColor.YELLOW + "Get YOURS now at " + ChatColor.AQUA + "Link!");
+                        textrecipient.sendMessage(ChatColor.YELLOW + "Get YOURS now at " + ChatColor.AQUA + "SHOP.LOLPVP.ORG!");
                     }
 
 

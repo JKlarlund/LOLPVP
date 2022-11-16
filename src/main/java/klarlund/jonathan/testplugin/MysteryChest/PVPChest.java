@@ -77,6 +77,9 @@ public class PVPChest implements Listener {
 
                     //Give three enchanted apples (1 item)
 
+                    player.getInventory().addItem(new ItemStack(Material.GOLDEN_APPLE, 3, (short) 1));
+
+
                     //Armor
 
                     if (ArmorChance <= 10){
@@ -156,7 +159,7 @@ public class PVPChest implements Listener {
                     List<Player> onlinePlayers = (List<Player>) Bukkit.getOnlinePlayers();
                     for (Player recipient: onlinePlayers){
                         recipient.sendMessage(ChatColor.AQUA + player.getName() + " " + ChatColor.RED + "just opened a PVP Chest!");
-                        recipient.sendMessage(ChatColor.YELLOW + "Get YOURS now at " + ChatColor.AQUA + "Link!");
+                        recipient.sendMessage(ChatColor.YELLOW + "Get YOURS now at " + ChatColor.AQUA + "SHOP.LOLPVP.ORG!");
                     }
 
                     if(ChestAmount>1){
